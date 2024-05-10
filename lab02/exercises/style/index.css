@@ -1,3 +1,7 @@
+:root{
+  --color:#059669;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -22,20 +26,21 @@ body{
 nav{
   display: grid;
   place-content: center;
+  min-width: 300px;
   height: 100%;
-  min-width: 200px;
+  width: 100%;
 }
 
 .navlist{
-  width: 100%;
+  width: max-content;
   height: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: 0 16px 16px 0;
+  justify-content: center;
 }
-.navlist li{
+.navlist:first-child{
   width: 100%;
-  text-align: center; /*pediente*/
+  text-align: start; /*pediente*/
   padding-bottom: 20px;
 }
 .navlist i{
@@ -47,10 +52,32 @@ nav{
   border-bottom: 2px solid transparent;
   transition: all 0.55s ease;
 }
+.navlist .puntero{
+  color: var(--color);
+}
 
 .navlist a:hover{
   border-bottom: 2px solid #151515;
 }
+
+.sublist{
+  margin: 0 30%;
+  text-align: start;
+  width: 100%;
+  border-left: 2px solid #151515;
+}
+.sublist li{
+  margin-left: 10px;
+}
+.desplegar{
+  margin-left: 80px;
+}
+Desplegar la lista
+/*.desplegar:hover .sublist{
+  background-color: antiquewhite;
+  display: flex;
+  border-left: 2px solid #151515;
+}*/
 
 /*Content*/
 
@@ -122,5 +149,3 @@ footer a:hover{
 }
 @media (max-width:500px){
 }
-
-
