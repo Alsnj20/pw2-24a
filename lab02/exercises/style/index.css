@@ -17,9 +17,11 @@ body{
 }
 
 .container{
+  width: 100vw;
   height: calc(100vh - 80px);
   display: grid;
   grid-template-columns: 300px auto;
+  place-content: center;
 }
 
 /*Navegacion*/
@@ -27,8 +29,8 @@ nav{
   display: grid;
   place-content: center;
   min-width: 300px;
+  width: 20%;
   height: 100%;
-  width: 100%;
 }
 
 .navlist{
@@ -82,10 +84,10 @@ Desplegar la lista
 /*Content*/
 
 main{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  display: grid;
+  width: calc(100vw - 20%);
+  place-content: center;
+  
 }
 
 header{
