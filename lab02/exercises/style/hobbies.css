@@ -88,9 +88,26 @@ main{
   display: grid;
   place-content: center;
 }
+main header{
+
+}
+
+main .hobbies{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.descriptionText, .amo{
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
 footer{
   position: absolute;
-  top:160%;
+  top:180%;
   height: 80px;
   width: 100vw;
   display: grid;
@@ -108,27 +125,10 @@ header{
   display: grid;
   place-content: center;
 }
-
-img{
-  width: 300px;
-  height: 400px;
-}
-
-.content{
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
 .content-text{
   width: 50%;
 }
 
-img{
-  width: 300px;
-  height: 400px;
-}
 aside{
   width: 80%;
 }
