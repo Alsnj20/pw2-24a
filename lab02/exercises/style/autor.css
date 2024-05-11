@@ -30,7 +30,7 @@ nav{
   display: grid;
   place-content: center;
   min-width: 200px;
-  height: 50%;
+  height: 100vh;
 }
 
 .navlist{
