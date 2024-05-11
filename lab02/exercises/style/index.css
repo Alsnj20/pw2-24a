@@ -1,5 +1,6 @@
 :root{
   --color:#059669;
+  --heightFooter: 8%;
 }
 
 *{
@@ -16,35 +17,29 @@ body{
   box-sizing: border-box;
 }
 
+/*Contenedor que contiene todo*/
 .container{
   width: 100vw;
-  height: calc(100vh - 80px);
+  height: 100vh;
   display: grid;
   grid-template-columns: 300px auto;
-  place-content: center;
 }
 
 /*Navegacion*/
 nav{
   display: grid;
   place-content: center;
-  min-width: 300px;
-  width: 20%;
+  min-width: 200px;
   height: 100%;
 }
 
 .navlist{
-  width: max-content;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.navlist:first-child{
-  width: 100%;
-  text-align: start; /*pediente*/
-  padding-bottom: 20px;
-}
+
 .navlist i{
   margin-right: 5px;
 }
@@ -63,41 +58,42 @@ nav{
 }
 
 .sublist{
-  margin: 0 30%;
+  margin: 0 20%;
   text-align: start;
   width: 100%;
   border-left: 2px solid #151515;
 }
+
 .sublist li{
   margin-left: 10px;
 }
+
 .desplegar{
-  margin-left: 80px;
+  margin-left: 50px;
 }
-Desplegar la lista
-/*.desplegar:hover .sublist{
+/*Desplegar la lista
+.desplegar:hover .sublist{
   background-color: antiquewhite;
   display: flex;
   border-left: 2px solid #151515;
 }*/
 
-/*Content*/
+
+/*Content parte principal */
 
 main{
   display: grid;
-  width: calc(100vw - 20%);
   place-content: center;
-  
 }
 
-header{
+main header{
   text-align: center;
   font-size: 3rem;
   font-weight: 500;
 }
 
-.content{
-  width: 80%;
+main .content{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,10 +103,11 @@ header{
   width: 50%;
 }
 
-img{
+.content-img img{
   width: 300px;
   height: 400px;
 }
+/* Redes */
 .networks{
   display: flex;
   justify-content: center;
@@ -121,19 +118,19 @@ img{
   transition: all 0.5s ease;
 }
 .networks a:hover{
-  color:#059669;
+  color:var(--color);
   transform: translateX(5px);
 }
 
 footer{
   position: absolute;
   bottom: 0;
-  height: 80px;
+  height: var(--heightFooter);
   width: 100vw;
   display: grid;
   place-content: center;
-  background-color: #059669;
-  color:#eee;
+  background-color: var(--color);
+  color:#fff;
 }
 footer a{
   color:#eee;
@@ -143,11 +140,52 @@ footer a:hover{
   color:#dddbdb;
 }
 
-@media (max-width: 1200px){
+
+/* Responsive */
+@media (max-width: 1000px){
   .container{
-    grid-template-columns: repeat(1,1fr);
-    height: max-content;
+    grid-template-columns: 150px auto;
+  }
+
+  .content-img img{
+    width: 200px;
+    height: 300px;
   }
 }
-@media (max-width:500px){
+@media (max-width:780px){
+  .container{
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 200px auto;
+  }
+  main{
+    height: calc(100vh - 200px);
+  }
+}
+
+@media (max-width:450px){
+  .container{
+    grid-template-rows: 200px auto;
+    height: auto;
+  }
+  main{
+    height: auto;
+  }
+  main header{
+    font-size: 2.5rem;
+  }
+  .content-text{
+    margin: 4%;
+    width: auto;
+    text-align: center;
+  }
+  .content-text h1{
+    font-size: 1rem;
+  }
+  footer{
+    position: static;
+    height:50px;
+    width: 100vw;
+  }
 }
