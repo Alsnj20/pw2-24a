@@ -96,6 +96,7 @@ main .hobbies, .duracion, .recomendacion{
 /* Descripcion */
 .head{
   background-color: #059669;
+  color:#fff;
   margin: 20px 0;
   padding-left:20px;
   border-radius: 0 10px 10px 0;
@@ -226,6 +227,9 @@ footer a:hover{
     width: 200px;
     height: 300px;
   }
+  footer{
+    width: 100vw;
+  }
 }
 @media (max-width:780px){
   .container{
@@ -245,15 +249,34 @@ footer a:hover{
     grid-template-rows: 200px auto;
     height: auto;
   }
-  main .content{
-    height: auto;
+  main .hobbies, .duracion, .recomendacion{
+    padding: 0;
   }
-  .content-text{
-    margin: 4%;
-    width: auto;
+  .description{
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
+  }
+  .item img:first-child{
+    width: 80px;
+  }
+  .item img:last-child{
+    margin-top: 10px;
+    width: 200px;
+    border-radius: 100%;
+  }
+  .duracion_content{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .recomendacion div{
+    grid-template-columns: auto;
+  }
+  .head{
+    animation: none;
     text-align: center;
+    border-radius: 0;
   }
-  .content-img img{
-    margin: 0;
+  .recomendacion div img{
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
