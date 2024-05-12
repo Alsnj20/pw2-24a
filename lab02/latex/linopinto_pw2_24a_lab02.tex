@@ -1,0 +1,274 @@
+%package list
+\documentclass{article}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+    literate={├}{|}1 {─}{--}1 {└}{+}1 
+  }
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+%\usepackage{booktabs}
+\usepackage[labelformat=empty]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{mjarama@unsa.edu.pe}
+\newcommand{\itemStudent}{Mariel Alisson Jara Mamani}
+\newcommand{\itemCourse}{Programación Web 2}
+\newcommand{\itemCourseCode}{1702122}
+\newcommand{\itemSemester}{I}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2023 - B}
+\newcommand{\itemInput}{Del 30 Abril 2024}
+\newcommand{\itemOutput}{Al 04 Mayo 2024}
+\newcommand{\itemPracticeNumber}{02}
+\newcommand{\itemTheme}{Git y GitHub}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.1\height}{\includegraphics[width=1.2cm]{img/logo_abet}}}
+\fancyfoot[L]{Mariel Jara}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+
+\begin{document}
+
+\vspace*{10px}
+
+\begin{center}
+	\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+\end{center}
+\centerline{\textbf{\Large Tema: \itemTheme}}
+%\vspace*{0.5cm}	
+
+\begin{flushright}
+	\begin{tabular}{|M{2.5cm}|N|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white} \textbf{Nota} \\
+		\hline
+		\\[30pt]
+		\hline
+	\end{tabular}
+\end{flushright}
+
+\begin{table}[H]
+	\begin{tabular}{|M{4.7cm}|M{4.7cm}|M{4.7cm}|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela} & \color{white}\textbf{Asignatura}                                        \\
+		\hline
+		{\itemStudent \par \itemEmail}    & \itemSchool                   & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{|M{4.7cm}|M{4.7cm}|M{4.7cm}|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema} & \color{white}\textbf{Duración} \\
+		\hline
+		\itemPracticeNumber               & \itemTheme                 & 04 horas                       \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{|M{4.7cm}|M{4.7cm}|M{4.7cm}|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio} & \color{white}\textbf{Fecha de entrega} \\
+		\hline
+		\itemAcademic                            & \itemInput                            & \itemOutput                            \\
+		\hline
+	\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tarea}
+\begin{itemize}
+	\item \textbf{Git}\\
+        Git es un sistema de control de versiones distribuido que permite gestionar cambios en el código fuente durante el desarrollo de software. Permite a los desarrolladores colaborar en proyectos, realizar seguimiento de las modificaciones y revertir cambios si es necesario.\\
+        \textbf{Comandos Básicos de Git}
+        \begin{lstlisting}[language=bash]
+        # Inicializar un repositorio Git en un directorio existente
+        git init
+        # Clonar un repositorio Git existente
+        git clone <url>
+        # Añadir archivos
+        git add <archivo>
+        # Confirmar cambios en el repositorio
+        git commit -m "Primer Commit"
+        # Ver el estado actual del repositorio
+        git status
+        # Ver el historial de commits
+        git log
+        \end{lstlisting}
+	\item \textbf{GitHub}\\
+        GitHub es una plataforma de alojamiento de código fuente basada en la nube que utiliza Git para el control de versiones. Además de alojar repositorios de código, proporciona herramientas para la gestión de proyectos, seguimiento de problemas, revisión de código y colaboración entre desarrolladores.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+\section{Site Personal}
+
+\begin{itemize}
+    \item \textbf{Menú Principal:}
+    Inicio | Autor | Estándares Web | Contáctame
+    \begin{itemize}
+        \item \textbf{index.html} - Página principal de bienvenida al sitio.
+        \item \textbf{autor.html} - Página de presentación del autor.
+        \item \textbf{hobbies.html} - Página de fotos y descripciones de sus hobbies.
+        \item \textbf{ingSoftware.html} - Página donde se explica qué es la Ingeniería de Software desde su punto de vista.
+        \item \textbf{galeria.html} - Página de fotos y descripciones libres que quiera compartir.
+        \item \textbf{estandaresWeb.html} - Página donde se describen los estándares web, incluyendo SVG, WOFF, WebRTC, XML.
+        \item \textbf{contactame.html} - Página donde se muestra un formulario de contacto.
+    \end{itemize}
+
+    \item \textbf{Autor} 
+    Autor | Hobbies | Ing. de Software | Galería
+    
+    \item \textbf{Contáctame:} Formulario con los campos: nombres, correo electrónico, género, fecha de nacimiento, asunto, contenido y botón de enviar.
+\end{itemize}
+
+\section{Entregables:}
+\begin{itemize}
+    \item Informe de laboratorio.
+    \item Archivos en el repositorio de la pagina personal
+    \item URL: Docker Hub.
+\end{itemize}
+
+\section{Procedimiento}
+\begin{itemize}
+    \item Subir el proyecto de la pagina personal a docker
+\end{itemize}
+
+\section{URL de Docker Hub}
+\begin{itemize}
+	\item \url{https://hub.docker.com/r/marielj/lab02/tags}
+\end{itemize}
+
+\section{Estructura de laboratorio \itemPracticeNumber}
+\begin{itemize}
+	\item El contenido que se entrega en este laboratorio es el siguiente:
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lstlisting}[style=ascii-tree]
+lab02/
+|--- README.md
+|--- exercises
+    |---hola.java
+|---index.html
+|---autor.html
+|---autor
+    |--- hobbies.html
+    |--- ingSoftware.html
+    |--- galeria.html
+|---estandaresWeb.html
+|---contactame.html
+|---/css
+|---index.css
+    |---autor.css
+        |--- hobbies.css
+        |--- ingSoftware.css
+        |--- galeria.css
+    |---estandaresWeb.css
+    |---contactame.css
+|--- img/
+|--- latex/
+    |--- linopinto_pw2_24a_lab02.tex
+    |--- linopinto_pw2_24a_lab02.pdf
+    |--- img/
+	|--- logo_abet.png
+	|--- logo_episunsa.png
+\end{lstlisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Referencias}
+\begin{itemize}
+	\item \url{https://docs.docker.com/}
+        \item \url{https://github.com/}
+        \item \url{https://git-scm.com/}
+        \item \url{https://www.w3.org/Style/Examples/011/firstcss.en.html}
+\end{itemize}
+
+%\pagebreak
+%\bibliographystyle{apalike}
+%\bibliographystyle{IEEEtranN}
+%\bibliography{bibliography}
+
+\end{document}
