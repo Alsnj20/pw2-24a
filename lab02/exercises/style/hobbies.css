@@ -1,48 +1,45 @@
 :root{
   --color:#059669;
+  --heightFooter: 8%;
 }
+
 *{
   padding: 0;
   margin: 0;
   list-style: none;
   text-decoration: none;
 }
+
 body{
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
+
+/*Contenedor que contiene todo*/
 .container{
   width: 100vw;
   height: auto;
   display: grid;
   grid-template-columns: 300px auto;
-  place-content: center;
 }
 
 /*Navegacion*/
 nav{
   display: grid;
   place-content: center;
-  min-width: 300px;
-  height: 40vw;
-  width: 100%;
+  min-width: 200px;
+  height: 100vh;
 }
 
 .navlist{
-  width: max-content;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.navlist:first-child{
-  width: 100%;
-  text-align: start; /*pediente*/
-  padding-bottom: 20px;
-}
 .navlist i{
   margin-right: 5px;
 }
@@ -61,7 +58,7 @@ nav{
 }
 
 .sublist{
-  margin: 0 30%;
+  margin: 0 20%;
   text-align: start;
   width: 100%;
   border-left: 2px solid #151515;
@@ -70,74 +67,37 @@ nav{
 .sublist li{
   margin-left: 10px;
 }
-.desplegar{
-  margin-left: 80px;
-}
-Desplegar la lista
-/*.desplegar:hover .sublist{
-  background-color: antiquewhite;
-  display: flex;
-  border-left: 2px solid #151515;
-}*/
 
-/*Content*/
+.desplegar{
+  margin-left: 50px;
+}
 
 main{
+  display: grid;
+  place-content: center;
+}
+
+/* Hobbies */
+main .hobbies, .duracion, .recomendacion{
   width: 100%;
-  height: auto;
   display: grid;
   place-content: center;
-}
-main header{
-
-}
-
-main .hobbies{
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.descriptionText, .amo{
-  background-color: aqua;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  padding: 30px;
+  box-sizing: border-box;
 }
 
-footer{
-  position: absolute;
-  top:180%;
-  height: 80px;
-  width: 100vw;
-  display: grid;
-  place-content: center;
-  background-color: #059669;
-  color:#eee;
-}
-
-header{
+.hobbies header{
   text-align: center;
   font-size: 3rem;
   font-weight: 500;
-  height: 10vh;
-  margin: 0;
-  display: grid;
-  place-content: center;
-}
-.content-text{
-  width: 50%;
+  box-sizing: border-box;
 }
 
-aside{
-  width: 80%;
-}
-
+/* Descripcion */
 .head{
-  margin: 20px 0;
   background-color: #059669;
+  margin: 20px 0;
   padding-left:20px;
-  margin-left: -20px;
   border-radius: 0 10px 10px 0;
   animation: scale 2s linear alternate-reverse forwards 2;
 }
@@ -153,10 +113,90 @@ aside{
     width: 100%;
   }
 }
-.person:not(:last-of-type){
-  padding-bottom: 20px;
+
+.description{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  place-content: center;
+  text-align: center;
+  padding: 30px;
+}
+.description .item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item p{
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.description .item:first-child img:last-child{
   margin-top: 20px;
-  border-bottom: 2px solid #059669;
+}
+.item img:first-child{
+  width: 60px;
+}
+.item img:last-child{
+  margin-top: 10px;
+  width: 250px;
+  border-radius: 100%;
+}
+
+/* Duracion */
+.duracion_content{
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.duracion_content .divItem{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  border-radius: 20px;
+  background-color: rgb(237, 198, 198);
+}
+
+.divItem div span{
+  font-weight: bold;
+}
+
+.divItem div p{
+  font-size: 14px;
+}
+
+.divItem img{
+  width: 100px;
+}
+
+.recomendacion p{
+  padding: 20px;
+  border: 3px dashed rosybrown;
+}
+.recomendacion div{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 200px auto;
+  padding: 20px;
+  column-gap: 20px;
+}
+.recomendacion div img{
+  width: 100%;
+}
+
+/* Footer */
+footer{
+  height: var(--heightFooter);
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  background-color: var(--color);
+  color:#fff;
 }
 
 footer a{
@@ -169,11 +209,51 @@ footer a:hover{
 }
 
 
-@media (max-width: 1200px){
+/* Responsive */
+@media (max-width: 1000px){
+  nav{
+    height: 100vh;
+  }
   .container{
-    grid-template-columns: repeat(1,1fr);
-    height: max-content;
+    grid-template-columns: 200px auto;
+  }
+  .content-text header{
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .content-img img{
+    margin-top: 100px;
+    width: 200px;
+    height: 300px;
   }
 }
-@media (max-width:500px){
+@media (max-width:780px){
+  .container{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 200px auto;
+  }
+  nav{
+    height: 200px;
+  }
+  main .content{
+    height: calc(100vh - 200px);
+  }
+}
+
+@media (max-width:450px){
+  .container{
+    grid-template-rows: 200px auto;
+    height: auto;
+  }
+  main .content{
+    height: auto;
+  }
+  .content-text{
+    margin: 4%;
+    width: auto;
+    text-align: center;
+  }
+  .content-img img{
+    margin: 0;
+  }
 }
