@@ -34,6 +34,11 @@ header img{
   width: 200px;
 }
 
+h1{
+  margin-top: 50px;
+  font-size: 30px;
+}
+
 .container h1 img{
   width: 30px;
 }
@@ -41,12 +46,16 @@ header img{
 h1 span{
   color:var(--fontSpan)
 }
+.container{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rosybrown;
+}
 
 main{
-  width: 50vw;
-  height: 40vh;
   padding: 20px;
-  background-color: var(--colorHeaderForm);
   display: grid;
   place-content: center;
   text-align: center;
@@ -56,24 +65,67 @@ main{
   display: flex;
   flex-direction: column;
   gap:20px;
+  background-color: var(--colorHeaderForm);
+  padding: 30px 100px;
+  border-radius: 10px;
+  box-shadow:2px 2px 8px gray;
+}
+
+.inputGroup{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:5px;
+}
+
+.inputGroup select{
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.inputGroup:first-of-type label{
+  padding-left: 60px;
+}
+
+.inputGroup:nth-of-type(2) label{
+  padding-left: 12px;
+}
+
+.inputGroup:nth-of-type(3) label{
+  margin-left: 0;
 }
 
 .inputGroup select:first-of-type{
-  padding: 5px;
-  border-radius: 10px;
-  width: 50%;
-}
-
-.inputGroup input:nth-child(2){
-  padding: 5px;
-  border-radius: 10px;
   width: 60%;
 }
-.content{
-  background-color: #9F090C;
-  display: flex;
+
+.inputGroup input{
+  outline: none;
+  border: none;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  height: 14px;
 }
 
+.inputGroup:nth-of-type(2) input{
+  width: 58%;
+}
+
+.inputGroup:nth-of-type(3) div{
+  width: 63%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.inputGroup:nth-of-type(3) select, .inputGroup:nth-of-type(3) input{
+  width: 100%;
+}
+
+
+/* Teclado Virtual */
 .vKeyboard{
   width: 120px;
   display: grid;
@@ -91,4 +143,23 @@ main{
   grid-column: 2/4;
 }
 
+/* Footer */
+
+footer{
+  margin-top: 80px;
+}
+
+footer p{
+  color: var(--colorClearBtn);
+  font-size: 14px;
+  margin: 5px;
+  text-align: center;
+}
+#place{
+  font-weight: bold;
+}
+
+#oficinas p{
+  margin-bottom: 0px;
+}
 

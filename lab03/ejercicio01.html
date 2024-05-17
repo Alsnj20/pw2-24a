@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+  <!--Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <!--Custom CSS-->
   <link rel="stylesheet" href="css/ejercicio01.css">
   <!--Custom JS-->
@@ -27,25 +32,27 @@
     <main>
       <form id="loginForm">
 
-        <div class="inputGroup">
+        <div class="inputGroup group">
           <label for="agencia">Seleccione:</label>
           <select id="agencia">
             <option value="multired">Multired Global Débito</option>
           </select>
         </div>
 
-        <div class="inputGroup">
+        <div class="inputGroup group">
           <label for="numeroTarjeta">Número de tarjeta:</label>
           <input type="text" id="numeroTarjeta">
         </div>
 
         <div class="inputGroup">
-          <label for="tipoDocumento">Tipo y N° Documento</label>
-          <select id="tipoDocumento">
-            <option disabled selected>Seleccione...</option>
-            <option>DNI</option>
-          </select>
-          <input type="text" id="dni">
+          <label for="tipoDocumento">Tipo y N° Documento:</label>
+          <div>
+            <select id="tipoDocumento">
+              <option disabled selected>Seleccione...</option>
+              <option>DNI</option>
+            </select>
+            <input type="text" id="dni">
+          </div>
         </div>
 
         <div class="content">
@@ -75,7 +82,7 @@
     </main>
   </div>
   <footer>
-    <h3>Banco de la Nacion | Ministerio de Economía y Finanzas</h3>
+    <p id="place">Banco de la Nacion | Ministerio de Economía y Finanzas</p>
     <div id="oficinas">
       <p>Oficina Principal: Av. Javier Prado Este 2499. San Borja. Central Telefónica: 519 2000.</p>
       <p>Atención en Oficinas Administrativas: Lunes a Viernes de 08:30 a 17:30. Refrigerio de: 13:00-14:00.</p>
@@ -83,4 +90,5 @@
     </div>
   </footer>
 </body>
+
 </html>
