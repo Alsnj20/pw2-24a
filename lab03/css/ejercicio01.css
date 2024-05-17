@@ -1,0 +1,94 @@
+:root {
+  --colorBg: #C31415;
+  --colorHeaderForm: #FFFFFF;
+  --colorBgAll:#F0F0F0;
+  --colorSelectBtn:#9F090C;
+  --colorClearBtn:#555555;
+  --fontSpan:#C21315;
+  --fontColor:#3A3434;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--colorBgAll);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+}
+
+header{
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: var(--colorHeaderForm);
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 10px solid var(--colorBg);
+}
+
+header img{
+  width: 200px;
+}
+
+.container h1 img{
+  width: 30px;
+}
+
+h1 span{
+  color:var(--fontSpan)
+}
+
+main{
+  width: 50vw;
+  height: 40vh;
+  padding: 20px;
+  background-color: var(--colorHeaderForm);
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+#loginForm{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
+
+.inputGroup select:first-of-type{
+  padding: 5px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.inputGroup input:nth-child(2){
+  padding: 5px;
+  border-radius: 10px;
+  width: 60%;
+}
+.content{
+  background-color: #9F090C;
+  display: flex;
+}
+
+.vKeyboard{
+  width: 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.vKeyboard .btn{
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+#clear{
+  grid-column: 2/4;
+}
+
+
