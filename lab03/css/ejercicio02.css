@@ -1,0 +1,113 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle,
+  #ff9501 300px,gray 8%,#151515 10%);
+
+}
+
+body h1{
+  font-size: 54px;
+}
+
+.container{
+  background-color: #000000;
+  width: 500px;
+  height: 80vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  box-shadow: 10px 10px 0px #ff9501;
+  margin-top: 30px;
+}
+.input{
+  width: 100%;
+  height: 15%;
+  font-size: 100px;
+  color:#ffffff;
+  background: transparent;
+  border: 1px solid transparent;
+  text-align: right;
+}
+.content{
+  width: 100%;
+  height: 75%;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  gap:10px;
+}
+.content div{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:10px;
+}
+div .five{
+  grid-template-columns: 2fr 1fr 1fr;
+}
+.content button{
+  border-radius: 100px;
+  font-size: 40px;
+  font-weight: 400;
+  border: 1px solid transparent;
+}
+.content button:hover{
+  transition: all 0.3s;
+  transform: translateX(3px);
+}
+.cls{
+  background-color: #a6a6a6;
+}
+.cls:hover{
+  background-color: #b9b8b8;
+}
+.number, .h{
+  background-color: #333333;
+  color:#ffffff;
+}
+.number:hover, .h:hover{
+  background-color: #4f4f4f;
+}
+
+div .operator{
+  background-color: #ff9501;
+  color:#ffffff;
+  font-size: 50px;
+}
+div .isAClick{
+  background-color: #ffffff;
+  color: #ff9501;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  width: 100vw;
+  background-color:#ff9501;
+  color: white;
+  padding: 34px 0;
+}
+footer a{
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+}
+
+
+
+
