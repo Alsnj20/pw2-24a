@@ -16,6 +16,7 @@ const swapNumber = () => {
       numberSelect.push(num);
       btn.textContent = numbers[num] + "";
     }
+    btn.textContent = 1;
   })
 }
 
