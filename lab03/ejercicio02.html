@@ -4,48 +4,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Calculator</title>
+  <!--Icons-->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <!--Custom CSS-->
   <link href="./css/ejercicio02.css" rel="stylesheet">
-  <script src="./script.js" defer></script>
+  <!--Custom JS-->
+  <script src="./js/ejercicio02.js" defer></script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="input">0</div>
-    <div class="content">
-      <div class="first">
-        <button class="cls" id="clear">AC</button>
-        <button class="cls" class="pos" class="neg" id="signNumber">+/-</button>
-        <button class="cls" id="percentage">%</button>
-        <button class="operator" id="divided">/</button>
+  <main>
+    <div class="menu">
+      <div><i class='bx bx-undo'></i> Deshacer</div>
+      <div>Básico<i class='bx bx-chevron-down'></i></div>
+      <div id="options">
+        <div id="lines">
+          <div class="rest"><i class='bx bx-minus'></i></div>
+          <div class="square"><i class='bx bx-square'></i></div>
+          <div class="exit"><i class='bx bx-x'></i></div>
+        </div>
       </div>
-      <div>
+    </div>
+    <input type="text" value="5+4">
+    <div class="container">
+      <div class="input">0</div>
+      <div class="content">
+        <button class="cls" id="clear">AC</button>
+        <button id="bracket">(</button>
+        <button id="bracket">)</button>
+        <button id="mod">mod</button>
+        <button> &pi;</button>
         <button class="number">7</button>
         <button class="number">8</button>
         <button class="number">9</button>
-        <button class="operator" id="times">&times;</button>
-      </div>
-      <div class="three">
+        <button class="operator" id="divided">&divide;</button>
+        <button class="operator" id="square">&square;</button>
         <button class="number">4</button>
         <button class="number">5</button>
         <button class="number">6</button>
-        <button class="operator" id="minus">-</button>
-      </div>
-      <div class="four">
+        <button class="operator" id="times">&times;</button>
+        <button class="operator" id="">&square;</button>
         <button class="number">1</button>
         <button class="number">2</button>
         <button class="number">3</button>
-        <button class="operator" id="plus">+</button>
-      </div>
-      <div class="five">
+        <button class="operator" id="minus"> -</button>
+        <button class="operator" id="equal"> =</button>
         <button class="number">0</button>
         <button class="h" id="decimal">.</button>
-        <button class="operator" id="equal">=</button>
+        <button class="cls" id="percentage">%</button>
+        <button class="operator" id="plus">+</button>
       </div>
     </div>
-  </div>
+  </main>
   <footer>
-    <a href="#" target="_blank"><p>Copyright &copy; 2024 Alsnj20 :)</p></a>
+    <a href="#" target="_blank">
+      <p>Copyright &copy; 2024 Alsnj20 :)</p>
+    </a>
   </footer>
 </body>
 
