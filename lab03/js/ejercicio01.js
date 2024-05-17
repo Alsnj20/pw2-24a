@@ -11,12 +11,13 @@ let number = '';
 
 const swapNumber = () => {
   btnNumber.forEach((btn) => {
-    let num = parseFloat(Math.random() * numbers.length);
-    if (!numberSelect.includes(num)) {
-      numberSelect.push(num);
-      btn.textContent = numbers[num] + "";
-    }
-    btn.textContent = 1;
+    console.log(btn)
+    let num;
+    do {
+      num = parseInt(Math.random() * numbers.length);
+    } while (numberSelect.includes(num));
+    numberSelect.push(num);
+    btn.textContent = numbers[num];
   })
 }
 
