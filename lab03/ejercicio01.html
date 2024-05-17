@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Multired Virtual</title>
 </head>
+
 <body>
   <div class="container">
-    <header>
-      <img src="#"> usted se encuentra en una <span class="item">zona segura</span>
-    </header>
-    <main>
-      <div class="tipoBanco">
-        <label for="agencia">Seleccione:</label>
-        <select id="agencia">
-          <option>Multired Global Débito</option>
-          <option>Multired Global Débito</option>
-          <option>Multired Global Débito</option>
-          <option>Multired Global Débito</option>
-        </select>
-      </div>
-      <div class="datosTarjeta">
-        <label for="numeroTarjeta">Número de tarjeta:</label>
-        <input type="text" id="numeroTarjeta">
-      </div>
-      <div class="datos">
-        <label for="tipoDocumento">Tipo y N° Documento</label>
-        <select id="dato">
-          <option>DNI</option>
-        </select>
-        <input type="text" id="dni">
-      </div>
-      <div class="content">
-        <div class="content1">
-          <div class="text">
-            <label>Ingresa tu clave usando el teclado virtual:</label>
-          </div>
-          <div class="teclado">
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
-            <button class="btn">7</button>
-            <button class="btn">8</button>
-            <button class="btn">9</button>
-            <button class="btn">0</button>
-            <button id="clear" class="btn">Limpiar</button>
-          </div>
-        </div>
-        <div class="content2">
+    <h1>
+      <img src="#">
+      Usted se encuentra en una 
+      <span>zona segura</span>
+    </h1>
 
+    <main>
+      <form id="loginForm">
+
+        <div class="inputGroup">
+          <label for="agencia">Seleccione:</label>
+          <select id="agencia">
+            <option value="multired">Multired Global Débito</option>
+          </select>
         </div>
-      </div>
+
+        <div class="inputGroup">
+          <label for="numeroTarjeta">Número de tarjeta:</label>
+          <input type="text" id="numeroTarjeta">
+        </div>
+
+        <div class="inputGroup">
+          <label for="tipoDocumento">Tipo y N° Documento</label>
+          <select id="tipoDocumento">
+            <option disabled selected>Seleccione...</option>
+            <option>DNI</option>
+          </select>
+          <input type="text" id="dni">
+        </div>
+
+        <div class="content">
+          <div class="content1">
+            <div class="text">
+              <label>Ingresa tu clave usando el teclado virtual:</label>
+            </div>
+            <div class="vKeyboard">
+              <button class="btn">1</button>
+              <button class="btn">2</button>
+              <button class="btn">3</button>
+              <button class="btn">4</button>
+              <button class="btn">5</button>
+              <button class="btn">6</button>
+              <button class="btn">7</button>
+              <button class="btn">8</button>
+              <button class="btn">9</button>
+              <button class="btn">0</button>
+              <button id="clear" class="btn">LIMPIAR</button>
+            </div>
+          </div>
+          <div class="content2">
+
+          </div>
+        </div>
+      </form>
     </main>
+    <footer>
+      <h3>Banco de la Nacion | Ministerio de Economía y Finanzas</h3>
+      <div id="oficinas">
+        <p>Oficina Principal: Av. Javier Prado Este 2499. San Borja. Central Telefónica: 519 2000.</p>
+        <p>Atención en Oficinas Administrativas: Lunes a Viernes de 08:30 a 17:30. Refrigerio de: 13:00-14:00.</p>
+        <p>Atención en Oficina de Trámite Documentario: Lunes a Viernes de 8:30 a 16:30 (horario corrido).</p>
+      </div>
+    </footer>
   </div>
   <script src="js/ejercicio01.js"></script>
 </body>
+
 </html>
