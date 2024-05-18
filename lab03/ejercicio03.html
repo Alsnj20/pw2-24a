@@ -14,7 +14,7 @@
   <title>Hang Man</title>
   <!--Custom JS-->
   <script src="./js/ejercicio03.js" defer></script>
-  <!--Api JS-->
+  <!--Api Rough JS-->
   <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
 </head>
 
@@ -22,7 +22,7 @@
   <main>
     <h1>HANG MAN</h1>
     <div class="container">
-      <canvas onclick="playGame()" width="400px" height="500px" id="itemCanvas"></canvas>
+      <canvas width="400px" height="500px" id="itemCanvas"></canvas>
       <div class="content">
         <div class="content_Text">
           <h2>Palabra a adivinar</h2>
@@ -33,35 +33,35 @@
           </div>
         </div>
         <div class="keyBoard">
-          <button>A</button>
-          <button>B</button>
-          <button>C</button>
-          <button>D</button>
-          <button>E</button>
-          <button>F</button>
-          <button>G</button>
-          <button>H</button>
-          <button>I</button>
-          <button>J</button>
-          <button>K</button>
-          <button>L</button>
-          <button>M</button>
-          <button>N</button>
-          <button>O</button>
-          <button>P</button>
-          <button>Q</button>
-          <button>R</button>
-          <button>S</button>
-          <button>T</button>
-          <button>U</button>
-          <button>V</button>
-          <button>W</button>
-          <button>X</button>
-          <button>Y</button>
-          <button>Z</button>
+          <button class="btn">A</button>
+          <button class="btn">B</button>
+          <button class="btn">C</button>
+          <button class="btn">D</button>
+          <button class="btn">E</button>
+          <button class="btn">F</button>
+          <button class="btn">G</button>
+          <button class="btn">H</button>
+          <button class="btn">I</button>
+          <button class="btn">J</button>
+          <button class="btn">K</button>
+          <button class="btn">L</button>
+          <button class="btn">M</button>
+          <button class="btn">N</button>
+          <button class="btn">O</button>
+          <button class="btn">P</button>
+          <button class="btn">Q</button>
+          <button class="btn">R</button>
+          <button class="btn">S</button>
+          <button class="btn">T</button>
+          <button class="btn">U</button>
+          <button class="btn">V</button>
+          <button class="btn">W</button>
+          <button class="btn">X</button>
+          <button class="btn">Y</button>
+          <button class="btn">Z</button>
         </div>
         <div class="options">
-          <button onclick="resetGame()">Start Game</button>
+          <button id="start" onclick="startGame()">Start Game</button>
         </div>
       </div>
     </div>
