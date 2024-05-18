@@ -1,18 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <!--Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="./css/ejercicio03.css">
+  <title>Hang Man</title>
+  <!--Custom JS-->
   <script src="./js/ejercicio03.js" defer></script>
+  <!--Api JS-->
+  <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
 </head>
+
 <body>
-  <style>
-    #itemCanvas {
-      border: 2px solid black;
-    }
-  </style>
-  <canvas onclick="playGame()" width="400px" height="500px" id="itemCanvas">
-  </canvas>
+  <main>
+    <h1>HANG MAN</h1>
+    <div class="container">
+      <canvas onclick="playGame()" width="400px" height="500px" id="itemCanvas"></canvas>
+      <div class="content">
+        <div class="content_Text">
+          <h2>Palabra a adivinar</h2>
+          <p id="word"></p>
+          <div>
+            <p>Palabra Buscada:<span id="key"></span></p>
+            <p>Intentos:<span id="attempts"></span></p>
+          </div>
+        </div>
+        <div class="keyBoard">
+          <button>A</button>
+          <button>B</button>
+          <button>C</button>
+          <button>D</button>
+          <button>E</button>
+          <button>F</button>
+          <button>G</button>
+          <button>H</button>
+          <button>I</button>
+          <button>J</button>
+          <button>K</button>
+          <button>L</button>
+          <button>M</button>
+          <button>N</button>
+          <button>O</button>
+          <button>P</button>
+          <button>Q</button>
+          <button>R</button>
+          <button>S</button>
+          <button>T</button>
+          <button>U</button>
+          <button>V</button>
+          <button>W</button>
+          <button>X</button>
+          <button>Y</button>
+          <button>Z</button>
+        </div>
+        <div class="options">
+          <button onclick="resetGame()">Start Game</button>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
+
 </html>

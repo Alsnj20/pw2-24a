@@ -1,66 +1,33 @@
+
 const itemCanvas = document.getElementById('itemCanvas');
 const datacdx = itemCanvas.getContext('2d');
+const roughCanvas = rough.canvas(itemCanvas);
 const img = document.getElementById('img');
 
 const stepHagMan = (step) =>{
   switch(step){
     case 0:
-      datacdx.beginPath();
-      /* Inicial */
-      /* - */
-      datacdx.moveTo(100, 250);
-      datacdx.lineTo(200, 250);
-      /* | */
-      datacdx.moveTo(150, 250);
-      datacdx.lineTo(150, 50);
-      /* - */
-      datacdx.moveTo(150, 50);
-      datacdx.lineTo(250, 50);
-      /* | */
-      datacdx.moveTo(250, 50);
-      datacdx.lineTo(250, 100);
-      datacdx.stroke();
-      datacdx.closePath();
-      /* O */
-      datacdx.beginPath();
-      datacdx.stroke();
-      datacdx.arc(250, 125, 25, 0, 2 * Math.PI);
-      datacdx.stroke();
+      // Estructura principal
+      roughCanvas.line(100, 250, 200, 250); // Base
+      roughCanvas.line(150, 250, 150, 50);  // Poste vertical
+      roughCanvas.line(150, 50, 250, 50);   // Poste horizontal
+      roughCanvas.line(250, 50, 250, 100);  // Cuerda
+      roughCanvas.circle(250, 125, 50);     // Cabeza
       break;
     case 1:
-      /* | */
-      datacdx.beginPath();
-      datacdx.moveTo(250, 150);
-      datacdx.lineTo(250, 200);
-      datacdx.stroke();
+      roughCanvas.line(250, 150, 250, 200); // Cuerpo
       break;
     case 2:
-      /* / */
-      datacdx.beginPath();
-      datacdx.moveTo(250, 200);
-      datacdx.lineTo(225, 250);
-      datacdx.stroke();
+      roughCanvas.line(250, 200, 225, 250); // Pierna izquierda
       break;
     case 3:
-      /* \ */
-      datacdx.beginPath();
-      datacdx.moveTo(250, 200);
-      datacdx.lineTo(275, 250);
-      datacdx.stroke();
+      roughCanvas.line(250, 200, 275, 250); // Pierna derecha
       break;
     case 4:
-      /* / */
-      datacdx.beginPath();
-      datacdx.moveTo(250, 150);
-      datacdx.lineTo(225, 200);
-      datacdx.stroke();
+      roughCanvas.line(250, 150, 225, 200); // Brazo izquierdo
       break;
     case 5:
-      /* \ */
-      datacdx.beginPath();
-      datacdx.moveTo(250, 150);
-      datacdx.lineTo(275, 200);
-      datacdx.stroke();
+      roughCanvas.line(250, 150, 275, 200); // Brazo derecho
       break;
   }
 }
@@ -75,5 +42,4 @@ const playGame = () =>{
   stepHagMan(step);
   console.log(step);
   step++;
-
 }
