@@ -6,6 +6,9 @@
   --colorClearBtn:#555555;
   --fontSpan:#C21315;
   --fontColor:#3A3434;
+  --colorOptionClear: #D8D5E9;
+  --colorOptionClearHover: #cec8f1;
+  --colorNumberClear:#E1E5E6;
 }
 
 body {
@@ -67,6 +70,8 @@ main{
 #loginForm{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap:20px;
   background-color: var(--colorHeaderForm);
   padding: 30px 100px;
@@ -134,8 +139,11 @@ main{
 /* Teclado Virtual */
 
 .content{
-  background-color: red;
+  width: 50%;
+  padding: 20px;
   display: grid;
+  place-content: center;
+  text-align: center;
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -144,12 +152,13 @@ main{
   gap:10px;
 }
 .text {
-  width: 180px;
+  width: max-content;
   text-align: end;
 }
 .vKeyboard{
-  width: 100px;
+  width: max-content;
   display: grid;
+  place-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
@@ -159,27 +168,26 @@ main{
   border-radius: 5px;
   outline: none;
   border: none;
+  width: 40px;
+  height: 40px;
   font-size: 18px;
   font-weight: bold;
-  color:var(--colorClearBtn)
+  background-color: var(--colorNumberClear);
+  color:var(--colorClearBtn);
 }
 
 #clear{
   font-size: 16px;
   background-color: var(--colorClearBtn);
-  color:var(--colorBgAll)
-}
-
-#clear{
+  color:var(--colorBgAll);
+  width: auto;
   grid-column: 2/4;
 }
 
 /* Footer */
-
 footer{
   margin-top: 80px;
 }
-
 footer p{
   color: var(--colorClearBtn);
   font-size: 14px;
@@ -189,7 +197,6 @@ footer p{
 #place{
   font-weight: bold;
 }
-
 #oficinas p{
   margin-bottom: 0px;
 }
