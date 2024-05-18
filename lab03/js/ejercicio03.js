@@ -1,5 +1,59 @@
+/* Method General for create Element */
+const createElement = (tag, atributte = {}, content = '') => {
+  const element = document.createElement(tag);
+  for (let key in atributte) {
+    element.setAttribute(key, atributte[key]);
+  }
+  element.innerHTML = content;
+  return element;
+}
+
+/* Create Keyboard */
+const createKeyBoard = () => {
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const btns = [];
+  for (const letter of letters) {
+    const btn = createElement('button', { class: 'btn' }, letter);
+    btns.push(btn);
+  }
+  return btns;
+}
+
+/* This is a scructure HTML */
+const generateScructureHTML = () => {
+  const main = createElement('main');
+  const h1 = createElement('h1', {}, 'HANG MAN');
+  const container = createElement('div', { class: 'container' });
+  const canvas = createElement('canvas', { width: '400px', height: '500px', id: 'itemCanvas' });
+  const content = createElement('div', { class: 'content' });
+  const contentText = createElement('div', { class: 'content_Text' });
+  const h2 = createElement('h2', {}, 'Palabra a adivinar');
+  const word = createElement('p', { id: 'word' });
+  const divkeyAttem = createElement('div');
+  const keyLabel = createElement('p', {}, 'Palabra Buscada:<span id="key"></span>');
+  const attemptsLabel = createElement('p', {}, 'Intentos:<span id="attempts"></span>');
+  const keyBoard = createElement('div', { class: 'keyBoard' });
+  const letterBtns = createKeyBoard();
+  const options = createElement('div', { class: 'options' });
+  const startButton = createElement('button', { id: 'start' }, 'Start Game');
+
+  /* Rest Operator, Propagacion */
+  console.log(letterBtns);
+  keyBoard.append(...letterBtns);
+  divkeyAttem.append(keyLabel, attemptsLabel);
+  contentText.append(h2, word, divkeyAttem);
+  content.append(contentText, keyBoard, options);
+  options.append(startButton);
+  container.append(canvas, content);
+  main.append(h1, container);
+  return main;
+}
+
+document.body.append(generateScructureHTML());
+
+/* Variables */
 const keyBoard = document.querySelector('.keyBoard');
-const btnStartGame = document.getElementsByClassName('#start');
+const btnStartGame = document.querySelector('#start');
 const word = document.querySelector('#word');
 const key = document.querySelector('#key');
 const attempts = document.querySelector('#attempts');
@@ -34,8 +88,7 @@ const startGame = () => {
   wordSearch = randomWord().toUpperCase();
   wordActually = whiteSpace(wordSearch);
   word.textContent = resetWord(wordActually);
-  attempts.textContent = " "+attemp;
-  btnStartGame.disabled = true;
+  attempts.textContent = " " + attemp;
   console.log(btnStartGame);
 }
 const resetWord = (word) => {
@@ -62,11 +115,11 @@ const resetGame = () => {
 const checkWord = (word, wordActually, letter) => {
   let newWord = '';
   for (let i = 0; i < word.length; i++) {
-    if (word[i] === letter){
+    if (word[i] === letter) {
       newWord += letter;
-    } else if(wordActually[i] === word[i]) {
+    } else if (wordActually[i] === word[i]) {
       newWord += word[i];
-    }else{
+    } else {
       newWord += "_";
     }
   }
@@ -75,7 +128,7 @@ const checkWord = (word, wordActually, letter) => {
 
 const restartAttemp = () => {
   attemp--;
-  attempts.textContent = " "+attemp;
+  attempts.textContent = " " + attemp;
 }
 
 const stepHagMan = (step) => {
@@ -142,22 +195,25 @@ const playGame = (value) => {
     console.log(step, attemp);
     attemp.textContent = attemp;
     stepHagMan(step);
-    key.textContent = " "+wordSearch;
+    key.textContent = " " + wordSearch;
     alert('Perdiste');
   }
 }
 
 
-  keyBoard.addEventListener('click', (e) => {
-    console.log("Click");
-    let letterBtn = e.target;
-    console.log(letterBtn);
-    if (letterBtn.classList.contains('btn') && !letterBtn.classList.contains('touched')) {
-      let value = letterBtn.textContent;
-      playGame(value);
-      letterBtn.classList.add('touched');
-    }
-  });
+keyBoard.addEventListener('click', (e) => {
+  console.log("Click");
+  let letterBtn = e.target;
+  console.log(letterBtn);
+  if (letterBtn.classList.contains('btn') && !letterBtn.classList.contains('touched')) {
+    let value = letterBtn.textContent;
+    playGame(value);
+    letterBtn.classList.add('touched');
+  }
+});
+
+btnStartGame.onclick = startGame;
+
 
 
 
