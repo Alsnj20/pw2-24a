@@ -67,7 +67,7 @@ const stepHagMan = (step) =>{
 
 let step = 0;
 
-itemCanvas.addEventListener('click', (e) => {
+const playGame = () =>{
   if(step > 5){
     step = 0;
     datacdx.clearRect(0, 0, itemCanvas.width, itemCanvas.height);
@@ -75,4 +75,5 @@ itemCanvas.addEventListener('click', (e) => {
   stepHagMan(step);
   console.log(step);
   step++;
-})
+
+}
