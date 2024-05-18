@@ -42,7 +42,7 @@ const generateScructureHTML = () => {
   const divExit = createElement('div', { class: 'exit' }, "<i class='bx bx-x'></i>");
 
   /* INPUT OPERATIONS */
-  const inputOperations = createElement('input', { id: 'inputOperations', type: 'text', value: '5+4' });
+  const inputOperations = createElement('input', { id: 'inputOperations', type: 'text', value: '0' });
 
   /* CONTAINER */
   const divContainer = createElement('div', { class: 'container' });
@@ -80,8 +80,8 @@ const generateScructureHTML = () => {
   divOptions.appendChild(divLines);
   divMenu.append(divUndo, divBasic, divOptions);
   divContent.append(...createBtns(btnsCalculator));
-  divContainer.appendChild(divContent);
-  aside.append(h1, divMenu, inputOperations, divContainer);
+  divContainer.append(divMenu, inputOperations, divContent);
+  aside.append(h1, divContainer);
   main.append(aside, createHistory());
   return main;
 }
