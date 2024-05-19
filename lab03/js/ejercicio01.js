@@ -11,8 +11,8 @@ const createElement = (tag, atributte = {}, content = '') => {
 
 const createHeader = () => {
   const header = createElement('header');
-  const imgLogoRedVirtual = createElement('img', { src: '../img/logoRedVirtual.jpg', alt: 'Multired' });
-  const imgBancoNacion = createElement('img', { src: '../img/bancoNacion.png', alt: 'banco_nacion' });
+  const imgLogoRedVirtual = createElement('img', { src: './img/logoRedVirtual.jpg', alt: 'Multired' });
+  const imgBancoNacion = createElement('img', { src: './img/bancoNacion.png', alt: 'banco_nacion' });
   header.append(imgLogoRedVirtual, imgBancoNacion);
   return header;
 }
@@ -27,7 +27,7 @@ const createBtns = (btnData) => {
 const generateScructureHTML = () => {
   // Crear container
   const container = createElement('div', { class: 'container' });
-  const h1 = createElement('h1', {}, `<img src="../img/candado.png"> Usted se encuentra en una <span>zona segura</span>`);
+  const h1 = createElement('h1', {}, `<img src="./img/candado.png"> Usted se encuentra en una <span>zona segura</span>`);
 
   // Crear main
   const main = createElement('main');
@@ -104,7 +104,7 @@ const numberSelect = [];
 let number = '';
 const swapNumber = () => {
   btnNumber.forEach((btn) => {
-    console.log(btn)
+    console.log(btn);
     let num;
     do {
       num = parseInt(Math.random() * numbers.length);

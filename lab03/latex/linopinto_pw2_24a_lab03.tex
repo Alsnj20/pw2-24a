@@ -1,0 +1,493 @@
+%package list
+\documentclass{article}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+    literate={├}{|}1 {─}{--}1 {└}{+}1 
+  }
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+%\usepackage{booktabs}
+\usepackage[labelformat=empty]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{mjarama@unsa.edu.pe}
+\newcommand{\itemStudent}{Mariel Alisson Jara Mamani}
+\newcommand{\itemCourse}{Programación Web 2}
+\newcommand{\itemCourseCode}{1702122}
+\newcommand{\itemSemester}{I}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2023 - B}
+\newcommand{\itemInput}{Del 30 Abril 2024}
+\newcommand{\itemOutput}{Al 04 Mayo 2024}
+\newcommand{\itemPracticeNumber}{03}
+\newcommand{\itemTheme}{JavaScript}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.1\height}{\includegraphics[width=1.2cm]{img/logo_abet}}}
+\fancyfoot[L]{Mariel Jara}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+
+\begin{document}
+
+\vspace*{10px}
+
+\begin{center}
+	\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+\end{center}
+\centerline{\textbf{\Large Tema: \itemTheme}}
+%\vspace*{0.5cm}	
+
+\begin{flushright}
+	\begin{tabular}{|M{2.5cm}|N|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white} \textbf{Nota} \\
+		\hline
+		\\[30pt]
+		\hline
+	\end{tabular}
+\end{flushright}
+
+\begin{table}[H]
+	\begin{tabular}{|M{4.7cm}|M{4.7cm}|M{4.7cm}|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela} & \color{white}\textbf{Asignatura}                                        \\
+		\hline
+		{\itemStudent \par \itemEmail}    & \itemSchool                   & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{|M{4.7cm}|M{4.7cm}|M{4.7cm}|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema} & \color{white}\textbf{Duración} \\
+		\hline
+		\itemPracticeNumber               & \itemTheme                 & 04 horas                       \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{|M{4.7cm}|M{4.7cm}|M{4.7cm}|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio} & \color{white}\textbf{Fecha de entrega} \\
+		\hline
+		\itemAcademic                            & \itemInput                            & \itemOutput                            \\
+		\hline
+	\end{tabular}
+\end{table}
+\newpage % Salto de página antes del índice
+% Indice
+\tableofcontents
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Empieza el Contenido %
+% TAREA %
+\section{Tarea}
+\begin{flushleft}
+Todos los ejercicios se realizaron exclusivamente con JavaScript puro, incluyendo la estructura HTML.
+\end{flushleft}
+\subsection{Ejercicio de Prueba}
+\begin{itemize}
+\item{Programar en JavaScript sobre una página web html básica (Se crea un contenedor y se pone un h1).}
+\end{itemize}
+\subsubsection{Commits}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{./img/image.png}
+\end{figure}
+\subsubsection{Pruebas}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{./img/image2.png}
+\end{figure}
+
+\subsection{Ejercicio 1}
+\begin{itemize}
+\item{Cree un teclado random para banca por internet.}
+\end{itemize}
+\subsubsection{Commits}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{./img/image3.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{./img/image4.png}
+\end{figure}
+\subsubsection{Código}
+\begin{itemize}
+\item{Creación de funciones para reutilizar código: createElement, createHeader, createBtn, generateScructureHTML, createFooter.}
+\item{\textbf{createElement():} Generalización de una función para reusar código, se encarga de crear los elementos y recibe tres parámetros: el tipo de elemento, un objeto con los atributos del elemento y el contenido del elemento.}
+\begin{lstlisting}[style=ascii-tree]
+const createElement = (tag, atributte = {}, content = '') => {
+  const element = document.createElement(tag);
+  for (let key in atributte) {
+    element.setAttribute(key, atributte[key]);
+  }
+  element.innerHTML = content;
+  return element;
+}
+\end{lstlisting}
+\item{\textbf{Forma de Uso}}
+\begin{lstlisting}[style=ascii-tree]
+const h1 = createElement('h1', {}, `<img src="../img/candado.png"> Usted se encuentra en una <span>zona segura</span>`);
+\end{lstlisting}
+\end{itemize}
+\subsubsection{Pruebas}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{./img/image5.png}
+\end{figure}
+
+
+
+
+\subsection{Ejercicio 2}
+\begin{itemize}
+\item{Cree una calculadora básica como la de los sistemas operativos, que pueda utilizar
+la función eval() y que guarde todos las operaciones en una pila. Mostrar la pila al píe de la página
+web.}
+\end{itemize}
+\subsubsection{Commits}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{./img/image6.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{./img/image7.png}
+\end{figure}
+\subsubsection{Código}
+\begin{itemize}
+\item{Creacion de funciones para reutilizar código: createElement, createBtns, createHistory, generateScructureHTML, createFooter.}
+\item{\textbf{Inserción del contenido generado en el cuerpo del documento} 
+\begin{lstlisting}[style=ascii-tree]
+document.body.append(generateScructureHTML(), createFooter());}
+\end{lstlisting}
+\item{\textbf{Método 'insertBefore':} Este método fue de ayuda al momento de almacenar el historial, se utiliza para insertar un nuevo elemento antes.} 
+\begin{lstlisting}[style=ascii-tree]
+pilaContent.insertBefore(divItem(operation), pilaContent.firstChild);
+\end{lstlisting}
+\end{itemize}
+\subsubsection{Diseño Responsivo}
+\begin{itemize}
+\item{\textbf{Propiedades para el Botón Igual:}
+Este estilo se aplica en especifico: 'grid-column: 5/6; y grid-row: 4/6' se encargar de posicionar el botón en una cuadrícula CSS, ocupa la quinta columna y abarca las filas 4 y 5.} 
+\begin{lstlisting}[style=ascii-tree]
+#equal {
+  height: auto;
+  grid-column: 5/6;
+  grid-row: 4/6;
+}
+\end{lstlisting}
+\item{\textbf{Media Query:}
+Esta media query nos permite manejar el diseño sin que haya colapsos de ancho o alto en relación al tamaño de la pantalla.}
+\begin{lstlisting}[style=ascii-tree]
+@media (max-width: 799px) {
+  main {
+    padding: 4%;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
+    height: auto;
+  }
+}
+\end{lstlisting}
+\end{itemize}
+\subsubsection{Pruebas}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{./img/image8.png}
+\end{figure}
+
+
+
+
+
+
+\subsection{Ejercicio 3}
+\begin{itemize}
+\item{Cree una versión de el juego ’el ahorcado’ que grafique con canvas paso a paso
+desde el evento onclick() de un botón.}
+\end{itemize}
+\subsubsection{Commits}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{./img/image9.png}
+\end{figure}
+\subsubsection{Código}
+\begin{itemize}
+\item{\textbf{Escructura HTML} Creación de funciones para reutilizar código: createElement, createKeyBoard, generateScructureHTML.}
+\item{\textbf{Funciones del Juego} Creación de funciones para el juego del ahorcado: startGame, resetGame, playGame, metodos auxiliares como: randomWord, whiteSpace, checkWord, restartAttemp, etc.}
+\item{\textbf{Uso de Canvas:}El '<canvas>' es un elemento HTML que proporciona un lienzo rectangular o cuadrado en el cual podemos dibujar gráficos, imágenes y otros elementos mediante coordenadas. Para esta tarea, hemos utilizado la API rough.js, que nos permite crear líneas y otros elementos gráficos con un estilo de dibujo a mano alzada. A continuación se muestra el uso de Canvas.}
+\item{Esta línea selecciona el canvas del documento HTML utilizando su ID.}
+\begin{lstlisting}[style=ascii-tree]
+const itemCanvas = document.querySelector('#itemCanvas');
+\end{lstlisting}
+\item{ Se obtiene el contexto de dibujo en 2D del canvas. Permitiendo hacer dibujos, lineas, etc.}
+\begin{lstlisting}[style=ascii-tree]
+const datacdx = itemCanvas.getContext('2d');
+\end{lstlisting}
+\item{Se crea una instancia de canvas utilizando la biblioteca rough.js, que se inicializa con el canvas HTML seleccionado.}
+\begin{lstlisting}[style=ascii-tree]
+const roughCanvas = rough.canvas(itemCanvas);
+\end{lstlisting}
+\item{Lógica Implementada}
+\begin{lstlisting}[style=ascii-tree]
+switch (step) {
+    case 0:
+      // Estructura principal
+      roughCanvas.line(50, 450, 200, 450); // Base
+      roughCanvas.line(125, 450, 125, 50);  // Poste vertical
+      roughCanvas.line(125, 50, 280, 50);   // Poste horizontal
+      roughCanvas.line(280, 50, 280, 100);  // Cuerda
+      roughCanvas.circle(280, 140, 80);     // Cabeza
+      break;
+    ...
+    case 6:
+      roughCanvas.circle(280, 140, 80);     // Cabeza
+      // Ojo derecho
+      roughCanvas.line(270, 130, 260, 120);
+      roughCanvas.line(260, 130, 270, 120);
+      // Ojo izquierdo
+      roughCanvas.line(290, 130, 300, 120);
+      roughCanvas.line(300, 130, 290, 120);
+      // Boca
+      roughCanvas.line(270, 150, 300, 145, 4);
+      // Lengua
+      roughCanvas.arc(280, 148, 20, 10, 0, 0.6 * Math.PI, true);
+      break;
+  }
+\end{lstlisting}
+\subsubsection{Diseño Responsivo}
+\item{\textbf{Media Query:}
+Esta media query se activa cuando el ancho de la pantalla es de 799 píxeles o menos de la siguiente forma: 'body' ajusta la altura automáticamente, '.container' cambia la cuadrícula a una sola columna, '.content' ajusta la altura al contenido máximo, '#word' fija la altura del elemento word.}
+\begin{lstlisting}[style=ascii-tree]
+@media (max-width: 799px) {
+  body {
+    height: auto;
+  }
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .content {
+    height: max-content;
+  }
+  #word {
+    height: 100px;
+  } 
+}
+\end{lstlisting}
+\end{itemize}
+\subsubsection{Pruebas}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{./img/image10.png}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+\section{Investigación}
+\subsection{JS Ofuscador}
+\item{Un ofuscador de JavaScript es una herramienta que se utiliza para transformar el código fuente de JavaScript de manera que sea más difícil de entender para los humanos, pero que siga siendo funcional para los navegadores y motores de JavaScript. Esto se logra mediante técnicas como cambiar los nombres de las variables y funciones a versiones más cortas, eliminar comentarios y espacios en blanco, y reorganizar el código de manera que sea más difícil de seguir la lógica del programa.}
+\subsubsection{Importar la herramienta en este caso: Obfuscador.io}
+\item{En este caso puede ser por npm o desde un link. Para el ejemplo se uso el link.}
+\begin{lstlisting}[style=ascii-tree]
+<script src="https://cdn.jsdelivr.net/npm/javascript-obfuscator/dist/index.browser.js"></script>
+\end{lstlisting}
+\subsubsection{Función whiteSpace del HangMan}
+\begin{lstlisting}[style=ascii-tree]
+const whiteSpace = (word) => {
+  let whiteSpace = '';
+  for (let i = 0; i < word.length; i++) {
+    whiteSpace += '_';
+  }
+  return whiteSpace;
+}
+\end{lstlisting}
+\subsubsection{Función ofuscada}
+\begin{lstlisting}[style=ascii-tree]
+function _0x2ddb(_0xaa7a23,_0x2e350a){const _0x81cc57=_0x81cc();return 
+_0x2ddb=function(_0x2ddbb0,_0x24bbb5){_0x2ddbb0=_0x2ddbb0-0x7d;let 
+_0x11fd08=_0x81cc57[_0x2ddbb0];return 
+_0x11fd08;},_0x2ddb(_0xaa7a23,_0x2e350a);}function _0x81cc(){const 
+_0x1a792b=['141106gowoef','573652aevNcU','712116ljvWcQ','2455180eZWOir',
+'321282RfmHKH','7145703UDOpoS','248tWsPPi','539777sfkETW','length',
+'3jTSlyS'];_0x81cc=function(){return _0x1a792b;};return _0x81cc();}
+(function(_0x48ed05,_0x336d6d{const_0x5a263a=_0x2ddb,_0x3288fd=_0x48ed05();
+while(!![]){try{const_0x534b6b=parseInt(_0x5a263a(0x80))/0x1+
+parseInt(_0x5a263a(0x85))/0x2+parseInt(_0x5a263a(0x82))/0x3*
+(parseInt(_0x5a263a(0x84))/0x4)+-parseInt(_0x5a263a(0x86))/0x5+-
+parseInt(_0x5a263a(0x7d))/0x6+parseInt(_0x5a263a(0x83))/0x7*(-
+parseInt(_0x5a263a(0x7f))/0x8)+parseInt(_0x5a263a(0x7e))/0x9;
+if(_0x534b6b===_0x336d6d)break;else _0x3288fd['push'](_0x3288fd['shift']
+());}catch(_0x4cf7e0){_0x3288fd['push'](_0x3288fd['shift']());}}}
+(_0x81cc,0xa20b6));const whiteSpace=_0x5f1207=>{const _0x1d2037=_0x2ddb;let 
+_0x18a769='';for(let _0x520ce5=0x0;_0x520ce5<_0x5f1207[_0x1d2037(0x81)];_0x520ce5++)
+{_0x18a769+='_';}return _0x18a769;};
+\end{lstlisting}
+\subsubsection{URL del código ofuscado para el funcionamiento del juego.}
+\begin{itemize}
+	\item \url{https://github.com/Alsnj20/pw2-24a/blob/main/lab03/js/ejercicio03.min.js}
+\end{itemize}
+\section{Entregables}
+\begin{itemize}
+    \item Informe de laboratorio.
+    \item Archivos correspondiente en el Repositorio.
+    \item URL del Repositorio.
+\end{itemize}
+
+\section{URL de Repositorio de Git Hub}
+\begin{itemize}
+	\item \url{https://github.com/Alsnj20/pw2-24a}
+\end{itemize}
+
+\section{Estructura de laboratorio \itemPracticeNumber}
+\begin{itemize}
+	\item El contenido que se entrega en este laboratorio es el siguiente:
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lstlisting}[style=ascii-tree]
+lab03/
+    |---/css
+        |---ejercicio01.css
+        |---ejercicio02.css
+        |---ejercicio03.css
+    |---/exercises
+    |---/img
+        |---bancoNacion.png
+        |---candado.png
+        |---logoRedVirtual.jpg
+    |---/js
+        |---ejercicio00.js
+        |---ejercicio01.js
+        |---ejercicio02.js
+        |---ejercicio03.js
+        |---ejercicio03.min.js
+    |---/latex
+        |--- linopinto_pw2_24a_lab03.tex
+        |--- linopinto_pw2_24a_lab03.pdf
+    |---.gitignore
+    |---ejercicio00.html
+    |---ejercicio01.html
+    |---ejercicio02.html
+    |---ejercicio03.html
+    |--- README.md
+\end{lstlisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rúbrica}
+
+\begin{table}[H]
+    \centering
+    \caption{Tabla: Rúbrica para contenido del Informe y evidencias}
+    \begin{tabular}{|p{2cm}|p{6cm}|c|c|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Contenido y demostración}} & \textbf{Puntos} & \textbf{Checklist} & \textbf{Estudiante} & \textbf{Profesor} \\ \hline
+        1. GitHub & Repositorio se pudo clonar y se evidencia la estructura adecuada para revisar los entregables. (Se descontará puntos por error o observación) & 4 & × & 4 & \\ \hline
+        2. Commits & Hay porciones de código fuente asociado a los commits planificados con explicaciones detalladas. (El profesor puede preguntar para refrendar calificación) & 4 & × & 4 & \\ \hline
+        3. Ejecución & Se incluyen comandos para ejecuciones y pruebas del código fuente explicadas gradualmente que permitirían replicar el proyecto. (Se descontará puntos por cada omisión) & 4 & ×  & 4 & \\ \hline
+        4. Pregunta & Se responde con completitud a la pregunta formulada en la tarea. (El profesor puede preguntar para refrendar calificación) & 2 & × & 2 & \\ \hline
+        7. Ortografía & El documento no muestra errores ortográficos. (Se descontará puntos por error encontrado) & 2 & × & 1 & \\ \hline
+        8. Madurez & El Informe muestra de manera general una evolución de la madurez del código fuente con explicaciones puntuales pero precisas, agregando diagramas generados a partir del código fuente y refleja un acabado impecable. (El profesor puede preguntar para refrendar calificación) & 4 & × & 3 & \\ \hline
+        \multicolumn{2}{|c|}{\textbf{Total}} & 20 & Completo & 18 & \\ \hline
+    \end{tabular}
+\end{table}
+
+\section{Referencias}
+\begin{itemize}
+    \item \url{https://github.com/}
+    \item \url{https://git-scm.com/}
+    \item \url{https://www.w3schools.com/graphics/canvas_intro.asp}
+    \item \url{https://roughjs.com/}
+    \item \url{https://obfuscator.io/}
+\end{itemize}
+
+
+%\pagebreak
+%\bibliographystyle{apalike}
+%\bibliographystyle{IEEEtranN}
+%\bibliography{bibliography}
+
+\end{document}
