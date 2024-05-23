@@ -1,11 +1,25 @@
 {
-    "dates": {
-        "day": {
+    "dates": [
+        {
             "date": "2023-05-23",
             "titles": [
                 "titulo1",
                 "titulo2"
             ]
+        }, 
+        {
+            "date": "2023-05-24",
+            "titles": [
+                "titulo3",
+                "titulo4"
+            ]
+        },
+        {
+            "date": "2023-05-25",
+            "titles": [
+                "titulo5",
+                "titulo6"
+            ]
         }
-    }
+    ]
 }

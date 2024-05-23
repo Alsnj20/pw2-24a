@@ -3,9 +3,7 @@ let removeButton;
 
 onload = function () {
     initButtons();
-    // list();
-    createBlock('2021-10-01', ['Evento 1', 'Evento 2']);
-    createBlock('2021-10-02', ['Evento 1', 'Evento 2']);
+    list();
 }
 
 function list() {

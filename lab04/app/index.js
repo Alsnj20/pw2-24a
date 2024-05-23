@@ -16,11 +16,23 @@ app.listen(3000, () => {
 
 
 app.get('/list', (req, res) => {
-    fs.readdir(path.resolve(__dirname, 'private', 'agenda'), (err, files) => {
-        if (err) {
-            res.status(500).send('Internal Server Error');
-            return;
-        }
-        res.json(files);
+    console.log('GET /list');
+    const data = {
+        dates: []
+    };
+    folders = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda'));
+    folders.forEach(function (folder) {
+        files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
+        const titles = [];
+        files.forEach(function (file) {
+            content = fs.readFileSync(path.resolve(__dirname, 'private', 'agenda', folder, file), 'utf8')
+            titles.push(content.substring(0, content.indexOf('\n')));
+        });
+        data.dates.push({
+            date: folder,
+            titles: titles
+        });
     });
+    console.log(data);
+    res.json(data);
 });
