@@ -20,7 +20,7 @@ app.get('/list', (req, res) => {
     const data = {
         dates: []
     };
-    folders = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda'));
+    const folders = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda'));
     folders.forEach(function (folder) {
         files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
         const titles = [];
@@ -32,6 +32,7 @@ app.get('/list', (req, res) => {
             date: folder,
             titles: titles
         });
+        console.log("Entro "+folder);
     });
     console.log(data);
     res.json(data);

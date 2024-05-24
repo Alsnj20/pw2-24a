@@ -10,11 +10,12 @@ function list() {
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById("list").innerHTML = '';
             const data = JSON.parse(xhr.responseText);
-            list.innerHTML = '';
             data['dates'].forEach(function (day) {
                 createBlock(day.date, day.titles);
             });
+            console.log(data);
         }
     }
     xhr.open('GET', '/list', true);
