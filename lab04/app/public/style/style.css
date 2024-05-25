@@ -34,6 +34,7 @@ header{
 }
 
 .task{
+  position: relative;
   width: 100%;
   min-height: 50px;
   background-color: aquamarine;
@@ -46,7 +47,6 @@ header{
 }
 
 .task .options div{
-  background-color: #f5f5f5;
 }
 
 .task .options button{
@@ -55,6 +55,15 @@ header{
   padding: 5px 10px;
   border: none;
   cursor: pointer;
+}
+
+/*edit Task*/
+.itemEdit{
+  position: absolute;
+  background-color: #16a34a;
+  top:4;
+  z-index:99;
+  
 }
 
 /*DIALOG*/
@@ -129,6 +138,7 @@ form div button {
 
 #addEvent {
   background-color: #16a34a;
+  padding: 20px;
 }
 
 #cancel {
@@ -162,6 +172,7 @@ dialog::backdrop {
   display: grid;
   place-content: center;
 }
+
 
 
 
