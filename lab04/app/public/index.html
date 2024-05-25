@@ -4,6 +4,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Font-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+	<!--Icons-->
+	<!--Custom CSS-->
+	<!--Custom JS-->
 	<script src="list.js"></script>
 	<script src="create.js" defer></script>
 	<script src="edit.js" defer></script>
@@ -12,31 +21,74 @@
 </head>
 
 <body>
-	<h1>Agenda Personal 💗</h1>
-	<main>
-		<div>
-			<label for="title">Titulo</label>
-			<input type="text" name="title" id="title">
-		</div>
-		<div>
-			<label for="description">Descripción</label>
-			<textarea type="text" name="description" id="description"></textarea>
-		</div>
-		<div>
-			<label for="date">Fecha y Hora</label>
-			<input value="2024-06-02T19:30" type="datetime-local" id="date" required>
-		</div>
-		<button onclick="create()">Crear Evento</button>
-	</main>
-	<br>
-	<div>
-		<ul id="list">
-			<div>
-				<li id="5">2020-10-10: Hacer la tarea de la universidad</li>
-				<button onclick="edit(this)">Editar</button>
-				<button onclick="remove(this)">Eliminar</button>
+	<header>Agenda Personal 💗</header>
+	<div class="content">
+		<h1>Tasks</h1>
+		<div class="tasks">
+
+			<div class="task">
+				<p class="title">Titulo1</p>
+				<p class="description">Descripcion1</p>
+				<div class="options">
+					<button onclick="edit(this)">Editar</button>
+					<button onclick="remove(this)">Eliminar</button>
+					<p>23:03</p>
+				</div>
 			</div>
-		</ul>
+
+			<div class="task">
+				<p class="title">Titulo1</p>
+				<p class="description">Descripcion1</p>
+				<div class="options">
+					<button onclick="edit(this)">Editar</button>
+					<button onclick="remove(this)">Eliminar</button>
+					<p>23:03</p>
+				</div>
+			</div>
+
+			<div class="task">
+				<p class="title">Titulo1</p>
+				<p class="description">Descripcion1</p>
+				<div class="options">
+					<button onclick="edit(this)">Editar</button>
+					<button onclick="remove(this)">Eliminar</button>
+					<p>23:03</p>
+				</div>
+			</div>
+
+		</div>
+
+		<h1>List Task</h1>
+
+		<button>Ver todo</button>
+
+		<div>
+			<ul id="list">
+			</ul>
+		</div>
+		<button id="add"><i class="bi bi-plus-lg"></i></button><!--add-->
 	</div>
+
+	<dialog close>
+		<form method="dialog">
+			<div>
+				<label for="title">Titulo</label>
+				<input type="text" name="title" id="title" required>
+			</div>
+			<div>
+				<label for="description">Descripción</label>
+				<textarea type="text" name="description" id="description" required></textarea>
+			</div>
+			<div>
+				<label for="date">Fecha y Hora</label>
+				<input value="2024-06-02T19:30" type="datetime-local" id="date" required>
+			</div>
+			<div>
+				<button onclick="create()">ADD EVENT</button>
+				<button id="cancel" type="submit">CANCEL</button>
+			</div>
+		</form>
+	</dialog>
 </body>
+
 </html>
