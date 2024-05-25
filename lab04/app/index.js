@@ -14,63 +14,66 @@ app.use(express.json());
 
 //Iniciar el servidor
 app.listen(3000, () => {
-    console.log('Server started on http://localhost:3000');
+  console.log('Server started on http://localhost:3000');
 });
 
 //Servidor responde
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+  res.send('Hello World!');
 });
 
 
 //Listar eventos
 app.get('/list', (req, res) => {
-    console.log('GET /list');
-    //Fecha y titulo del evento
-    const data = {
-        dates: []
-    };
-    //Lectura de directorios
-    const folders = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda'));
-    folders.forEach((folder) => {
-        const files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
-        const titles = [];
-        files.forEach((file) => {
-            const content = fs.readFileSync(path.resolve(__dirname, 'private', 'agenda', folder, file), 'utf8')
-            //Agregar el titulo del evento
-            titles.push(content.substring(0, content.indexOf('\n')));
-        });
-        console.log(titles);
-        data.dates.push({
-            date: folder,
-            titles: titles
-        });
+  console.log('GET /list');
+  //Fecha y titulo del evento
+  const data = {
+    dates: []
+  };
+  //Lectura de directorios
+  const folders = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda'));
+  folders.forEach((folder) => {
+    const files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
+    const titles = [];
+    files.forEach((file) => {
+      const content = fs.readFileSync(path.resolve(__dirname, 'private', 'agenda', folder, file), 'utf8')
+      //Agregar el titulo del evento
+      titles.push(content.substring(0, content.indexOf('\n')));
     });
-    console.log(data);
-    res.json(data);
+    console.log(titles);
+    data.dates.push({
+      date: folder,
+      titles: titles
+    });
+  });
+  console.log(data);
+  res.json(data);
 });
 
 //Crear un evento
 app.post('/create', (req, res) => {
-    console.log('POST /create');
-    //Obtener la informacion del evento
-    console.log(req.body);
-    const { date, title} = req.body;
-    console.log(date, title);
+  console.log('POST /create');
+  //Obtener la informacion del evento
+  console.log(req.body);
+  const { title, description, date, time } = req.body;
+  if (!title || !description || !date || !time) {
+    return res.status(400).send('Datos incompletos');
+  }
 
-    if (!date || !title) {
-        return res.status(400).send('Datos incompletos');
-    }
+  //Existe o no la fecha
+  const dateFolder = path.resolve(__dirname, 'private', 'agenda', date);
+  if (!fs.existsSync(dateFolder)) {
+    fs.mkdirSync(dateFolder, { recursive: true });
+  }
 
-    //Existe o no la fecha
+  //Crear el archivo con la informacion del evento
+  const filePath = path.resolve(dateFolder, `${time}.txt`);
 
-    const dateFolder = path.resolve(__dirname, 'private', 'agenda', date);
-    if (!fs.existsSync(dateFolder)) {
-        fs.mkdirSync(dateFolder,{ recursive: true });
-    }
-
-    //Crear el archivo con la informacion del evento
-    const filePath = path.resolve(dateFolder, `${title}.txt`);
-    fs.writeFileSync(filePath, "hola");
+  if (!fs.existsSync(filePath)) {
+    fs.writeFileSync(filePath, `${title}\n${description}\n`);
     res.status(201).send('Evento creado');
+    console.log('Evento creado');
+  } else {
+    console.log('Evento ya existe');
+  }
 });

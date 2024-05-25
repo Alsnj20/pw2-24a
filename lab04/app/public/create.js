@@ -7,7 +7,7 @@ const create = () => {
   const datePart = parts[0]; //Fecha
   const timePart = parts[1].replace(':', '-'); //Hora
   if (title && description && datePart && timePart) {
-    console.log("Titulo: " + title, "Descripçion: "+description, "Fecha: " + datePart, "Hora: " + timePart);
+    console.log("Titulo: " + title, "Descripcion: " + description, "Fecha: " + datePart, "Hora: " + timePart);
     //Enviar la informacion al servidor
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/create', true);
@@ -18,7 +18,7 @@ const create = () => {
         list();
       }
     }
-    xhr.send(JSON.stringify({title: title, description: description, date: datePart, time: timePart}));
+    xhr.send(JSON.stringify({ title: title, description: description, date: datePart, time: timePart }));
   }
 }
 
