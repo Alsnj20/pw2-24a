@@ -1,28 +1,13 @@
 let editButton;
 let removeButton;
 
-onload = function () {
+//Cuando la pagina se carge completamente
+onload = () =>{ 
     initButtons();
     list();
 }
 
-function list() {
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            document.getElementById("list").innerHTML = '';
-            const data = JSON.parse(xhr.responseText);
-            data['dates'].forEach(function (day) {
-                createBlock(day.date, day.titles);
-            });
-            console.log(data);
-        }
-    }
-    xhr.open('GET', '/list', true);
-    xhr.send();
-}
-
-function initButtons() {
+const initButtons = () => {
     editButton = document.createElement('button');
     editButton.innerHTML = 'Editar';
     editButton.setAttribute('onclick', 'edit(this)');
@@ -32,26 +17,51 @@ function initButtons() {
     removeButton.setAttribute('onclick', 'remove(this)');
 }
 
-function createBlock(date, titles) {
-    const div = document.createElement('div');
-    const day = document.createElement('p');
-    day.innerHTML = date;
-    div.appendChild(day);
+const createTask = (title) => {
+    const divTask = document.createElement('div');
+    const titleTask = document.createElement('p');
+    const divOptions = document.createElement('div');
+    titleTask.innerHTML = title;
+    divOptions.append(editButton.cloneNode(true), removeButton.cloneNode(true));
+    divTask.append(titleTask, divOptions);
+    return divTask;
+}
 
-    titles.forEach(function (title) {
-        innerDiv = createEvent(title);
-        div.appendChild(innerDiv);
+const createBlock = (date, titles) => {
+    const divDateTasks = document.createElement('div');
+    const divTitles = document.createElement('p');
+    const divTasks = document.createElement('ul');
+    
+    divTitles.innerHTML = date;
+
+    titles.forEach((title) =>{
+        const li = document.createElement('li');
+        const task = createTask(title);
+        li.appendChild(task);
+        divTasks.appendChild(li);
     });
 
-    document.getElementById('list').appendChild(div);
-    
+    divDateTasks.append(divTitles, divTasks);
+    document.getElementById('list').appendChild(divDateTasks);
 }
 
-function createEvent(title) {
-    const div = document.createElement('div');
-    const elem = document.createElement('li');
-    elem.innerHTML = title;
-    div.append(elem, editButton.cloneNode(true), removeButton.cloneNode(true));
 
-    return div;
+//Obtiene y muestra la lista de desde el servidor
+const list = () => {
+    //Solicitud al servidor HTTP
+    const xhr = new XMLHttpRequest();
+    //Cuando la solicitud se complete
+    xhr.onreadystatechange = () =>{
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            //Obtiene la respuesta del servidor en formato JSON
+            const data = JSON.parse(xhr.responseText);
+            data.dates.forEach((day) => {
+                createBlock(day.date, day.titles);
+            });
+            console.log(data);
+        }
+    }
+    xhr.open('GET', '/list', true);
+    xhr.send();
 }
+
