@@ -21,6 +21,7 @@ const createTask = (title) => {
     const divTask = document.createElement('div');
     const titleTask = document.createElement('p');
     const divOptions = document.createElement('div');
+    divOptions.classList.add('options');
     titleTask.innerHTML = title;
     divOptions.append(editButton.cloneNode(true), removeButton.cloneNode(true));
     divTask.append(titleTask, divOptions);

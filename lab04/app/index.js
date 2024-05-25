@@ -5,6 +5,8 @@ const path = require('path');
 //Crear una instancia de express
 const app = express();
 
+const folders = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda'));
+
 
 //Cualquier archivo desde la carpeta public sera accedido desdee el navegador
 app.use(express.static("public"))
@@ -31,7 +33,7 @@ app.get('/list', (req, res) => {
     dates: []
   };
   //Lectura de directorios
-  const folders = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda'));
+  folders = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda'));
   folders.forEach((folder) => {
     const files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
     const titles = [];
@@ -76,4 +78,15 @@ app.post('/create', (req, res) => {
   } else {
     console.log('Evento ya existe');
   }
+});
+
+
+//Editar un evento
+app.post('/edit', (req, res) => {
+  console.log('POST /edit');
+  //Obtener la informacion del evento
+  console.log(req.body);
+  const {oldTitle, newTitle, newDescription} = req.body;
+  const eventFound = false;
+  console.log(folders);
 });
