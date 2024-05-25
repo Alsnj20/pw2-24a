@@ -11,9 +11,11 @@
 		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 		rel="stylesheet">
 	<!--Icons-->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 	<!--Custom CSS-->
-	
+	<link rel="stylesheet" href="./style/style.css">
 	<!--Custom JS-->
+	<script src="./script/script.js" defer></script>
 	<script src="list.js"></script>
 	<script src="create.js" defer></script>
 	<script src="edit.js" defer></script>
@@ -23,7 +25,7 @@
 
 <body>
 	<header>Agenda Personal 💗</header>
-	<div class="content">
+	<div class="container">
 		<h1>Tasks</h1>
 		<div class="tasks">
 
@@ -31,8 +33,10 @@
 				<p class="title">Titulo1</p>
 				<p class="description">Descripcion1</p>
 				<div class="options">
-					<button onclick="edit(this)">Editar</button>
-					<button onclick="remove(this)">Eliminar</button>
+					<div>
+						<button onclick="edit(this)">Editar</button>
+						<button onclick="remove(this)">Eliminar</button>
+					</div>
 					<p>23:03</p>
 				</div>
 			</div>
@@ -41,8 +45,10 @@
 				<p class="title">Titulo1</p>
 				<p class="description">Descripcion1</p>
 				<div class="options">
-					<button onclick="edit(this)">Editar</button>
-					<button onclick="remove(this)">Eliminar</button>
+					<div>
+						<button onclick="edit(this)">Editar</button>
+						<button onclick="remove(this)">Eliminar</button>
+					</div>
 					<p>23:03</p>
 				</div>
 			</div>
@@ -51,8 +57,10 @@
 				<p class="title">Titulo1</p>
 				<p class="description">Descripcion1</p>
 				<div class="options">
-					<button onclick="edit(this)">Editar</button>
-					<button onclick="remove(this)">Eliminar</button>
+					<div>
+						<button onclick="edit(this)">Editar</button>
+						<button onclick="remove(this)">Eliminar</button>
+					</div>
 					<p>23:03</p>
 				</div>
 			</div>
@@ -67,25 +75,25 @@
 			<ul id="list">
 			</ul>
 		</div>
-		<button id="add"><i class="bi bi-plus-lg"></i></button><!--add-->
+		<button id="add"><i class='bx bx-plus'></i></button><!--add-->
 	</div>
 
 	<dialog close>
 		<form method="dialog">
 			<div>
 				<label for="title">Titulo</label>
-				<input type="text" name="title" id="title" required>
+				<input type="text" name="title" id="title">
 			</div>
 			<div>
 				<label for="description">Descripción</label>
-				<textarea type="text" name="description" id="description" required></textarea>
+				<textarea type="text" name="description" id="description"></textarea>
 			</div>
 			<div>
 				<label for="date">Fecha y Hora</label>
-				<input value="2024-06-02T19:30" type="datetime-local" id="date" required>
+				<input value="2024-06-02T19:30" type="datetime-local" id="date">
 			</div>
 			<div>
-				<button onclick="create()">ADD EVENT</button>
+				<button id="addEvent" onclick="create()">ADD EVENT</button>
 				<button id="cancel" type="submit">CANCEL</button>
 			</div>
 		</form>
