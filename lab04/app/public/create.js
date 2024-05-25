@@ -6,7 +6,7 @@ const create = () => {
   const parts = date.split('T');
   const datePart = parts[0]; //Fecha
   const timePart = parts[1].replace(':', '-'); //Hora
-  if (titleItem && date) {
+  if (title && description && datePart && timePart) {
     console.log("Titulo: " + title, "Descripçion: "+description, "Fecha: " + datePart, "Hora: " + timePart);
     //Enviar la informacion al servidor
     const xhr = new XMLHttpRequest();
