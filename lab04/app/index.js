@@ -106,3 +106,24 @@ app.post('/edit', (req, res) => {
     })
   })
 });
+
+
+//Eliminar un evento
+app.post('/remove', (req, res) => {
+  console.log('POST /edit');
+  //Obtener la informacion del evento
+  console.log(req.body);
+  const {time } = req.body;
+  console.log(time);
+  folders.forEach((folder) => {
+    const files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
+    files.forEach((file) => {
+      if (file === `${time}.txt`) {
+        const filePath = path.resolve(__dirname, 'private', 'agenda', folder, file);
+        fs.unlinkSync(filePath);
+        res.status(201).send('Evento eliminado');
+        console.log('Evento eliminado');
+      }
+    })
+  })
+});
