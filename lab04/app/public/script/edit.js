@@ -42,7 +42,7 @@ btnAccept.addEventListener('click', () => {
         list();
       }
     }
-    xhr.send(JSON.stringify({title: newTitle, description: newDescription, date: dateF}));
+    xhr.send(JSON.stringify({ title: newTitle, description: newDescription, time: dateF}));
     console.log('Evento mandado al servidor');
     editItem.style.display = 'none';
   } else {

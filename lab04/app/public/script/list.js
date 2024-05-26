@@ -42,10 +42,10 @@ const createBlock = (date, data) => {
   h2.innerHTML = date;
 
   data.forEach((file) => {
-    console.log("Datos: " + file.title, file.description, file.time);
     const task = createTask(file.title, file.description, file.time);
     divTempo.appendChild(task);
   });
+  divTasks.classList.add('tasks');
   divTasks.append(h2, divTempo);
   document.querySelector('.content-Task').appendChild(divTasks);
 }
@@ -60,7 +60,6 @@ const list = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       //Obtiene la respuesta del servidor en formato JSON
       const data = JSON.parse(xhr.responseText);
-      console.log(data);
       data.dates.forEach((day) => {
         createBlock(day.date, day.data);
       });

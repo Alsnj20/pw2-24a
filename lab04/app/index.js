@@ -31,21 +31,7 @@ app.get('/list', (req, res) => {
   console.log('GET /list');
   //Fecha y titulo del evento
   const data = {
-    dates: [{
-      date: '2021-09-01',
-      data: [
-      {
-        title: 'Evento 1',
-        description: 'Descripcion del evento 1',
-        time: '10:00'
-      },  
-      {
-        title: 'Evento 2',
-        description: 'Descripcion del evento 2',
-        time: '11:00'
-      }
-      ]
-    },],
+    dates: [],
   };
   //Lectura de directorios
   folders.forEach((folder) => {
@@ -63,7 +49,7 @@ app.get('/list', (req, res) => {
       }
       dateObj.data.push({
         title: content.substring(0, content.indexOf('\n')),
-        description: content.substring(content.indexOf('\n')+1, content.length),
+        description: content.substring(content.indexOf('\n') + 1, content.length),
         time: file.substring(0, file.indexOf('.'))
       })
     });
@@ -106,17 +92,17 @@ app.post('/edit', (req, res) => {
   console.log('POST /edit');
   //Obtener la informacion del evento
   console.log(req.body);
-  const {newTitle, newDescription, date} = req.body;
-  const eventFound = false;
-  console.log(folders);
-  /*folders.forEach((folder) => {
+  const { title, description, time } = req.body;
+  console.log(title, description, time);
+  folders.forEach((folder) => {
     const files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
     files.forEach((file) => {
-      const content = fs.readFileSync(path.resolve(__dirname, 'private', 'agenda', folder, file), 'utf8')
-      if (content.includes(date)) {
-        fs.writeFileSync(path.resolve(__dirname, 'private', 'agenda', folder, file), `${newTitle}\n${newDescription}\n`);
-        eventFound = true;
+      if (file === `${time}.txt`) {
+        const filePath = path.resolve(__dirname, 'private', 'agenda', folder, file);
+        fs.writeFileSync(filePath, `${title}\n${description}\n`);
+        res.status(201).send('Evento editado');
+        console.log('Evento editado');
       }
-    });
-  });*/
+    })
+  })
 });

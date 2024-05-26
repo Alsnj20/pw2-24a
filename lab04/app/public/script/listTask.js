@@ -60,12 +60,12 @@ const list = () => {
             data.dates.forEach((day) => {
                 console.log(day.title, day.description, day.time);
                 /*console.log(day.date, day.titles);
-                createBlock(day.date, day.titles);*/
+                createBlock(day.date, day.titles);
             });
             console.log(data);
         }
     }
     xhr.open('GET', '/list', true);
-    xhr.send();*/
-}
+    xhr.send();
+}*/
 
