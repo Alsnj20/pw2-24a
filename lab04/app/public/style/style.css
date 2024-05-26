@@ -173,6 +173,127 @@ dialog::backdrop {
   place-content: center;
 }
 
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.tasks {
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.tasks h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.task {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.task:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.task p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #45a049;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+li p {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+li ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+li ul li {
+  font-weight: normal;
+}
+button#add {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 24px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button#add:hover {
+  background-color: #005F6B;
+}
+dialog {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+dialog form div {
+  margin-bottom: 10px;
+}
+dialog form label {
+  display: block;
+  margin-bottom: 5px;
+}
+dialog form input,
+dialog form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+dialog form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+dialog form button:hover {
+  background-color: #45a049;
+}
 
 
 
