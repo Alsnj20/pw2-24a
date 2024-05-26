@@ -2,9 +2,22 @@
     "dates": [
         {
             "date": "2023-05-23",
+            "data": [
+                {
+                    "title": "The title",
+                    "description": "The description",
+                    "time": "The time"
+                }
+            ]
+        },
+        {
+            "date": "2023-05-23",
             "titles": [
-                "titulo1",
-                "titulo2"
+                {
+                    "title": "The title",
+                    "description": "The description",
+                    "time": "The time"
+                }
             ]
         }
     ]

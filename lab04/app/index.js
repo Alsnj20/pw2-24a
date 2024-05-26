@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const { title } = require('process');
 
 //Crear una instancia de express
 const app = express();
@@ -30,22 +31,41 @@ app.get('/list', (req, res) => {
   console.log('GET /list');
   //Fecha y titulo del evento
   const data = {
-    dates: []
+    dates: [{
+      date: '2021-09-01',
+      data: [
+      {
+        title: 'Evento 1',
+        description: 'Descripcion del evento 1',
+        time: '10:00'
+      },  
+      {
+        title: 'Evento 2',
+        description: 'Descripcion del evento 2',
+        time: '11:00'
+      }
+      ]
+    },],
   };
   //Lectura de directorios
-  folders = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda'));
   folders.forEach((folder) => {
     const files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
-    const titles = [];
     files.forEach((file) => {
       const content = fs.readFileSync(path.resolve(__dirname, 'private', 'agenda', folder, file), 'utf8')
-      //Agregar el titulo del evento
-      titles.push(content.substring(0, content.indexOf('\n')));
-    });
-    console.log(titles);
-    data.dates.push({
-      date: folder,
-      titles: titles
+      //Datos del evento
+      let dateObj = data.dates.find(carpeta => carpeta.date === folder);
+      if (!dateObj) {
+        dateObj = {
+          date: folder,
+          data: []
+        };
+        data.dates.push(dateObj);
+      }
+      dateObj.data.push({
+        title: content.substring(0, content.indexOf('\n')),
+        description: content.substring(content.indexOf('\n')+1, content.length),
+        time: file.substring(0, file.indexOf('.'))
+      })
     });
   });
   console.log(data);
@@ -86,7 +106,17 @@ app.post('/edit', (req, res) => {
   console.log('POST /edit');
   //Obtener la informacion del evento
   console.log(req.body);
-  const {oldTitle, newTitle, newDescription} = req.body;
+  const {newTitle, newDescription, date} = req.body;
   const eventFound = false;
   console.log(folders);
+  /*folders.forEach((folder) => {
+    const files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
+    files.forEach((file) => {
+      const content = fs.readFileSync(path.resolve(__dirname, 'private', 'agenda', folder, file), 'utf8')
+      if (content.includes(date)) {
+        fs.writeFileSync(path.resolve(__dirname, 'private', 'agenda', folder, file), `${newTitle}\n${newDescription}\n`);
+        eventFound = true;
+      }
+    });
+  });*/
 });

@@ -11,15 +11,16 @@
 		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 		rel="stylesheet">
 	<!--Icons-->
-  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 	<!--Custom CSS-->
 	<link rel="stylesheet" href="./style/style.css">
 	<!--Custom JS-->
 	<script src="./script/script.js" defer></script>
-	<script src="list.js"></script>
-	<script src="create.js" defer></script>
+	<script src="./script/listTask.js" defer></script>
+	<script src="./script/list.js" defer></script>
+	<script src="./script/create.js" defer></script>
 	<script src="./script/edit.js" defer></script>
-	<script src="remove.js"></script>
+	<script src="./script/remove.js"></script>
 	<title>Agenda Personal</title>
 </head>
 
@@ -27,44 +28,35 @@
 	<header>Agenda Personal 💗</header>
 	<div class="container">
 		<h1>Tasks</h1>
-		<div class="tasks">
-
-			<div class="task">
-				<p class="title">Titulo1</p>
-				<p class="description">Descripcion1</p>
-				<div class="options">
-					<div>
-						<button onclick="edit(this)">Editar</button>
-						<button onclick="remove(this)">Eliminar</button>
+		<div class="content-Task">
+			<div class="tasks">
+				<h2>2023-05-10</h2>
+				<div class="tempo">
+					<div class="task">
+						<p class="title">Titulo1</p>
+						<p class="description">Descripcion1</p>
+						<div class="options">
+							<div>
+								<button onclick="edit(this)">Editar</button>
+								<button onclick="remove(this)">Eliminar</button>
+							</div>
+							<p>23:03</p>
+						</div>
 					</div>
-					<p>23:03</p>
+
+					<div class="task">
+						<p class="title">Titulo1</p>
+						<p class="description">Descripcion1</p>
+						<div class="options">
+							<div>
+								<button onclick="edit(this)">Editar</button>
+								<button onclick="remove(this)">Eliminar</button>
+							</div>
+							<p>23:03</p>
+						</div>
+					</div>
 				</div>
 			</div>
-
-			<div class="task">
-				<p class="title">Titulo1</p>
-				<p class="description">Descripcion1</p>
-				<div class="options">
-					<div>
-						<button onclick="edit(this)">Editar</button>
-						<button onclick="remove(this)">Eliminar</button>
-					</div>
-					<p>23:03</p>
-				</div>
-			</div>
-
-			<div class="task">
-				<p class="title">Titulo1</p>
-				<p class="description">Descripcion1</p>
-				<div class="options">
-					<div>
-						<button onclick="edit(this)">Editar</button>
-						<button onclick="remove(this)">Eliminar</button>
-					</div>
-					<p>23:03</p>
-				</div>
-			</div>
-
 		</div>
 
 		<h1>List Task</h1>
