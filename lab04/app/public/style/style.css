@@ -37,7 +37,6 @@ header{
   position: relative;
   width: 100%;
   min-height: 50px;
-  background-color: aquamarine;
   padding: 10px;
 }
 
@@ -55,6 +54,7 @@ header{
   padding: 5px 10px;
   border: none;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 /*edit Task*/
@@ -247,22 +247,7 @@ li ul {
 li ul li {
   font-weight: normal;
 }
-button#add {
-  background-color: #008CBA;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 15px;
-  font-size: 24px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-button#add:hover {
-  background-color: #005F6B;
-}
+
 dialog {
   background-color: white;
   padding: 20px;

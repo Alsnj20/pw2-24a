@@ -1,0 +1,630 @@
+%package list
+\documentclass{article}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+    literate={├}{|}1 {─}{--}1 {└}{+}1 
+  }
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+%\usepackage{booktabs}
+\usepackage[labelformat=empty]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{mjarama@unsa.edu.pe}
+\newcommand{\itemStudent}{Mariel Alisson Jara Mamani}
+\newcommand{\itemCourse}{Programación Web 2}
+\newcommand{\itemCourseCode}{1702122}
+\newcommand{\itemSemester}{I}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2023 - B}
+\newcommand{\itemInput}{Del 22 Mayo 2024}
+\newcommand{\itemOutput}{Al 25 Mayo 2024}
+\newcommand{\itemPracticeNumber}{04}
+\newcommand{\itemTheme}{NodeJS + Express}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{Latex/img/epis.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.1\height}{\includegraphics[width=1.2cm]{Latex/img/abet.png}}}
+\fancyfoot[L]{Mariel Jara}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+
+\begin{document}
+
+\vspace*{10px}
+
+\begin{center}
+	\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+\end{center}
+\centerline{\textbf{\Large Tema: \itemTheme}}
+%\vspace*{0.5cm}	
+
+\begin{flushright}
+	\begin{tabular}{|M{2.5cm}|N|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white} \textbf{Nota} \\
+		\hline
+		\\[30pt]
+		\hline
+	\end{tabular}
+\end{flushright}
+
+\begin{table}[H]
+	\begin{tabular}{|M{4.7cm}|M{4.7cm}|M{4.7cm}|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela} & \color{white}\textbf{Asignatura}                                        \\
+		\hline
+		{\itemStudent \par \itemEmail}    & \itemSchool                   & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{|M{4.7cm}|M{4.7cm}|M{4.7cm}|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema} & \color{white}\textbf{Duración} \\
+		\hline
+		\itemPracticeNumber               & \itemTheme                 & 04 horas                       \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{|M{4.7cm}|M{4.7cm}|M{4.7cm}|}
+		\hline
+		\rowcolor{tablebackground}
+		\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio} & \color{white}\textbf{Fecha de entrega} \\
+		\hline
+		\itemAcademic                            & \itemInput                            & \itemOutput                            \\
+		\hline
+	\end{tabular}
+\end{table}
+\newpage % Salto de página antes del índice
+% Indice
+\tableofcontents
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Empieza el Contenido %
+% TAREA %
+%%%TAREA
+\section{Tarea}
+\subsection{Descripción}
+\begin{itemize}
+\item{Cree una aplicación NodeJS con express, para administrar una agenda personal.}
+\item{Home (“/”) : Página Principal}
+\item{Trabaje todo en una misma interfaz.}
+\item{La aplicación debe permitir:}
+\begin{itemize}
+    \item{Crear evento: fecha y hora. (Si ya existe el archivo no debería ingresar el evento)(La primera
+línea es el título del evento, las demás líneas son la descripción del evento.}
+\item{ditar evento. (Se muestran el archivo donde esta el detalle del evento)
+}
+\item{Eliminar evento}
+\item{Ver eventos. Utilizar el formato árbol especificado anteriormente, donde debería incluirse
+sólo el título del evento.
+}
+\end{itemize}
+\item{Utilice DockerFile para realizar operaciones automatizadas en Docker (incluido arrancar el servidor web nginx a traves de un puerto y copiar el proyecto web para acceder desde la máquina
+anfitrion.)}
+\end{itemize}
+
+\subsection{Commits}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Latex/img/img1.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Latex/img/img2.png}
+\end{figure}
+\subsection{Código}
+\subsubsection{Lado Cliente}
+\begin{itemize}
+\item{ A continuación se muestran las partes del código}
+
+\item{\textbf{Método 'create' :} En el lado del cliente, el código se encarga de capturar los valores del título, descripción y fecha del evento desde un formulario HTML. Luego, se separa la fecha de la hora y se verifica que todos los campos estén completos. Si los datos están completos, se envían al servidor mediante una solicitud POST utilizando el objeto XMLHttpRequest. Una vez que se envía la solicitud, se espera la respuesta del servidor y se maneja adecuadamente. Si la solicitud se completa con éxito, se llama a la función 'list()' para actualizar la lista de eventos en el cliente.} 
+\begin{lstlisting}[style=ascii-tree]
+const create = () => {
+  const title = document.getElementById('title').value;
+  const description = document.getElementById('description').value;
+  const date = document.getElementById('date').value;
+  //Separar la fecha de la hora
+  const parts = date.split('T');
+  const datePart = parts[0]; //Fecha
+  const timePart = parts[1].replace(':', '-'); //Hora
+  if (title && description && datePart && timePart) {
+    console.log("Titulo: " + title, "Descripcion: " + description, "Fecha: " + datePart, "Hora: " + timePart);
+    //Enviar la informacion al servidor
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/create', true);
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4 && xhr.status === 0) {
+        console.log('Evento mandado al servidor');
+        list();
+      }
+    }
+    xhr.send(JSON.stringify({ title: title, description: description, date: datePart, time: timePart }));
+  }
+}
+\end{lstlisting}
+
+\item{\textbf{Método 'edit':}Este código crea una interfaz para editar eventos en el navegador. Al hacer clic en el botón de editar de un evento, muestra un formulario con campos para el nuevo título y descripción. Cuando se envían los cambios, realiza una solicitud POST al servidor con los nuevos datos del evento y actualiza la lista de eventos en el cliente si la operación se realiza con éxito.} 
+\begin{lstlisting}[style=ascii-tree]
+btnAccept.addEventListener('click', () => {
+  if (title.value !== '' || description.value !== '') {
+    editItem.style.display = 'none';
+    const newTitle = title.value;
+    const newDescription = description.value;
+
+    //Enviar la informacion al servidor
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/edit', true);
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4 && xhr.status === 0) {
+        console.log('Evento editado');
+        list();
+      }
+    }
+    xhr.send(JSON.stringify({ title: newTitle, description: newDescription, time: dateF}));
+    console.log('Evento mandado al servidor');
+    editItem.style.display = 'none';
+  } else {
+    console.log('Error en editar');
+  }
+})
+\end{lstlisting}
+
+\item{\textbf{Método 'remove':} Este código se ejecuta cuando se hace clic en el botón de eliminar un evento en la interfaz del usuario. Extrae la hora del evento a eliminar del elemento HTML correspondiente, realiza una solicitud POST al servidor con esta información y actualiza la lista de eventos en el cliente si la operación se realiza con éxito.} 
+\begin{lstlisting}[style=ascii-tree]
+const remove = (btn) => {
+  . . .
+  //Enviar la informacion al servidor
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', '/remove', true);
+  xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4 && xhr.status === 0) {
+      console.log('Evento eliminado');
+      list();
+    }
+  }
+  xhr.send(JSON.stringify({ time: dateF}));
+  console.log('Evento mandado al servidor');
+}
+\end{lstlisting}
+
+\item{\textbf{Método 'list':} Esta método envía una solicitud GET al servidor para obtener la lista de eventos. Cuando se recibe una respuesta exitosa del servidor, se procesa la respuesta y se crea una estructura de bloques de eventos con la función createBlock(). Cada bloque de evento contiene un título de fecha (h2) y una lista de tareas (divTasks) que se crea con la función createTask().} 
+\begin{lstlisting}[style=ascii-tree]
+const list = () => {
+  //Solicitud al servidor HTTP
+  const xhr = new XMLHttpRequest();
+  //Cuando la solicitud se complete
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      //Obtiene la respuesta del servidor en formato JSON
+      const data = JSON.parse(xhr.responseText);
+      data.dates.forEach((day) => {
+        createBlock(day.date, day.data);
+      });
+    }
+  }
+  xhr.open('GET', '/list', true);
+  xhr.send();
+};
+\end{lstlisting}
+
+\item{\textbf{Método 'listTask':} Similar a list(), este método envía una solicitud GET al servidor para obtener la lista de eventos, pero formatea los eventos en forma de árbol. Cuando se recibe una respuesta exitosa del servidor, se procesa la respuesta y se crea una estructura de lista de eventos en forma de árbol utilizando elementos li y ul.} 
+\begin{lstlisting}[style=ascii-tree]
+const createBlock2 = (date, data) => {
+    const divDateTasks = document.createElement('li');
+    const divTitles = document.createElement('p');
+    const divTasks = document.createElement('ul');
+    divTitles.innerHTML = date+" [DIR]";
+    data.forEach((file) =>{
+        const task = document.createElement('li');
+        task.innerHTML = file.time+".txt [FILE]";
+        divTasks.appendChild(task);
+    });
+    divDateTasks.append(divTitles, divTasks);
+    document.getElementById('list').appendChild(divDateTasks);
+}
+\end{lstlisting}
+\end{itemize}
+
+\subsubsection{Lado Servidor}
+\begin{itemize}
+\item{\textbf{Método 'create' :} El código en el lado del servidor se encarga de recibir una solicitud POST en la ruta '/create', extraer los datos del evento del cuerpo de la solicitud, verificar si los datos están completos, crear una carpeta para la fecha del evento si no existe y finalmente crear un archivo con la información del evento si el archivo correspondiente no existe. Si el evento se crea correctamente, se envía una respuesta con el mensaje 'Evento creado'.} 
+\begin{lstlisting}[style=ascii-tree]
+//Crear un evento
+app.post('/create', (req, res) => {
+  console.log('POST /create');
+  //Obtener la informacion del evento
+  console.log(req.body);
+  const { title, description, date, time } = req.body;
+  if (!title || !description || !date || !time) {
+    return res.status(400).send('Datos incompletos');
+  }
+  //Existe o no la fecha
+  const dateFolder = path.resolve(__dirname, 'private', 'agenda', date);
+  if (!fs.existsSync(dateFolder)) {
+    fs.mkdirSync(dateFolder, { recursive: true });
+  }
+  //Crear el archivo con la informacion del evento
+  const filePath = path.resolve(dateFolder, `${time}.txt`);
+  if (!fs.existsSync(filePath)) {
+    fs.writeFileSync(filePath, `${title}\n${description}\n`);
+    res.status(201).send('Evento creado');
+    console.log('Evento creado');
+  } else {
+    console.log('Evento ya existe');
+  }
+});
+\end{lstlisting}
+
+\item{\textbf{Método 'edit':}Este código maneja la edición de eventos. Recibe los nuevos datos del evento, busca el archivo correspondiente en el sistema de archivos, actualiza su contenido y envía una respuesta con el mensaje 'Evento editado'.} 
+\begin{lstlisting}[style=ascii-tree]
+app.post('/edit', (req, res) => {
+  console.log('POST /edit');
+  //Obtener la informacion del evento
+  console.log(req.body);
+  const { title, description, time } = req.body;
+  console.log(title, description, time);
+  folders.forEach((folder) => {
+    const files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
+    files.forEach((file) => {
+      if (file === `${time}.txt`) {
+        const filePath = path.resolve(__dirname, 'private', 'agenda', folder, file);
+        fs.writeFileSync(filePath, `${title}\n${description}\n`);
+        res.status(201).send('Evento editado');
+        console.log('Evento editado');
+      }
+    })
+  })
+});
+
+\end{lstlisting}
+
+\item{\textbf{Método 'remove':} Este fragmento de código maneja la eliminación de eventos. Recibe la hora del evento a eliminar, busca el archivo correspondiente en el sistema de archivos y lo elimina. Luego envía una respuesta con el mensaje 'Evento eliminado'.} 
+\begin{lstlisting}[style=ascii-tree]
+app.post('/remove', (req, res) => {
+  console.log('POST /edit');
+  //Obtener la informacion del evento
+  console.log(req.body);
+  const {time } = req.body;
+  console.log(time);
+  folders.forEach((folder) => {
+    const files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
+    files.forEach((file) => {
+      if (file === `${time}.txt`) {
+        const filePath = path.resolve(__dirname, 'private', 'agenda', folder, file);
+        fs.unlinkSync(filePath);
+        res.status(201).send('Evento eliminado');
+        console.log('Evento eliminado');
+      }
+    })
+  })
+});
+\end{lstlisting}
+
+\item{\textbf{Método 'list':} 'app.get('/list', ...)', define una ruta para manejar solicitudes GET a '/list'. Cuando se realiza una solicitud GET a esta ruta, el servidor responde con la lista de eventos almacenados en el sistema de archivos. El servidor lee los directorios y archivos en la ubicación de almacenamiento de eventos y los organiza en una estructura de datos JSON. Para cada evento encontrado, se agrega a la lista de eventos en la fecha correspondiente.} 
+\begin{lstlisting}[style=ascii-tree]
+app.get('/list', (req, res) => {
+  console.log('GET /list');
+  //Fecha y titulo del evento
+  const data = {
+    dates: [],
+  };
+  //Lectura de directorios
+  folders.forEach((folder) => {
+    const files = fs.readdirSync(path.resolve(__dirname, 'private', 'agenda', folder))
+    files.forEach((file) => {
+      const content = fs.readFileSync(path.resolve(__dirname, 'private', 'agenda', folder, file), 'utf8')
+      //Datos del evento
+      let dateObj = data.dates.find(carpeta => carpeta.date === folder);
+      if (!dateObj) {
+        dateObj = {
+          date: folder,
+          data: []
+        };
+        data.dates.push(dateObj);
+      }
+      dateObj.data.push({
+        title: content.substring(0, content.indexOf('\n')),
+        description: content.substring(content.indexOf('\n') + 1, content.length),
+        time: file.substring(0, file.indexOf('.'))
+      })
+    });
+  });
+  console.log(data);
+  res.json(data);
+});
+\end{lstlisting}
+
+\end{itemize}
+
+\subsection{Diseño Responsivo}
+\begin{itemize}
+\item{\textbf{Media Query:}
+Esta media query nos permite manejar el diseño sin que haya colapsos de ancho o alto en relación al tamaño de la pantalla.}
+\begin{lstlisting}[style=ascii-tree]
+@media (max-width: 799px) {
+  main {
+    padding: 4%;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
+    height: auto;
+  }
+}
+\end{lstlisting}
+\end{itemize}
+\subsection{Pruebas}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Latex/img/img3.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Latex/img/img4.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Latex/img/img5.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Latex/img/img6.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Latex/img/img7.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Latex/img/img8.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{Latex/img/img9.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Latex/img/img10.png}
+\end{figure}
+\subsection{DockerFile}
+\begin{itemize}
+        \item Configuración para correr nginx
+        \begin{lstlisting}[style=ascii-tree]
+        FROM node:18 as node_app
+        WORKDIR /app
+        COPY package*.json ./
+        RUN npm install
+        COPY . .
+        FROM nginx:alpine
+        COPY --from=node_app /app /usr/share/nginx/html
+        COPY nginx.conf /etc/nginx/nginx.conf
+        EXPOSE 80
+        CMD ["nginx", "-g", "daemon off;"]
+\end{lstlisting}
+	
+\end{itemize}
+
+\section{Pregunta}
+\begin{itemize}
+    \item Mencione la diferencia entre conexiones asíncronas usando el objeto XmlHttpRequest, JQuery.ajax
+y Fetch. Justifique su respuesta con un ejemplo muy básico. Eje: Hola Mundo, IMC, etc.
+\end{itemize}
+Las diferencias fundamentales entre XmlHttpRequest (XHR), jQuery.ajax y Fetch son principalmente en su sintaxis, manejo de promesas, soporte para APIs modernas y facilidad de uso.
+\subsection{XmlHttpRequest (XHR)}
+\item{Es una API antigua y fundamentalmente basada en eventos. Su uso implica una sintaxis más compleja y un manejo manual de eventos para realizar solicitudes y manejar respuestas. No es compatible con Promesas directamente, por lo que a menudo se envuelven en Promesas para un manejo más fácil y legible.}
+\subsubsection{Ejemplo}
+\begin{lstlisting}[style=ascii-tree]
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.example.com/data', true);
+xhr.onload = function() {
+  if (xhr.status >= 200 && xhr.status < 300) {
+    console.log(xhr.responseText);
+  } else {
+    console.error('Request failed');
+  }
+};
+xhr.send();
+\end{lstlisting}
+
+\subsection{jQuery.ajax}
+\item{Es una abstracción de XmlHttpRequest y proporciona una interfaz más simple y consistente. Es más legible y fácil de usar que XHR nativo. jQuery.ajax devuelve un objeto Promise, lo que facilita el manejo de solicitudes asincrónicas y el encadenamiento de acciones.}
+\subsubsection{Ejemplo}
+\begin{lstlisting}[style=ascii-tree]
+$.ajax({
+  url: 'https://api.example.com/data',
+  method: 'GET',
+  success: function(response) {
+    console.log(response);
+  },
+  error: function(xhr, status, error) {
+    console.error('Request failed');
+  }
+});
+\end{lstlisting}
+
+\subsection{Fetch API}
+\item{Es la API más moderna y está integrada en los navegadores.
+Proporciona una sintaxis más simple basada en Promesas. Fetch devuelve una Promise que resuelve la respuesta, lo que facilita el manejo de solicitudes y respuestas. Tiene soporte nativo para JSON y permite un manejo más fácil de los encabezados HTTP.}
+\subsubsection{Ejemplo}
+\begin{lstlisting}[style=ascii-tree]
+fetch('https://api.example.com/data')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error('Request failed', error));
+\end{lstlisting}
+
+\section{Entregables}
+\begin{itemize}
+    \item Informe de laboratorio.
+    \item Archivos correspondiente en el Repositorio.
+    \item URL del Repositorio.
+\end{itemize}
+
+\section{URL de Repositorio de Git Hub}
+\begin{itemize}
+	\item \url{https://github.com/Alsnj20/pw2-24a}
+\end{itemize}
+
+\newpage
+\section{Estructura de laboratorio \itemPracticeNumber}
+\begin{itemize}
+	\item El contenido que se entrega en este laboratorio es el siguiente:
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lstlisting}[style=ascii-tree]
+lab04/
+    |---/app
+        |---/node_modules
+        |---/private
+            |---/Agenda
+                |---/2024-05-25
+                    |---10-23.txt
+        |---public
+            |---script (lado cliente)
+                |---create.js
+                |---edit.js
+                |---list.js
+                |---listTask.js
+                |---remove.js
+                |---script.js
+            |---style 
+                |---ejercicio01.css
+            |---index.html
+            |---test.json (como se almacenan los datos de forma interna)
+        |---.gitignore
+        |---index.js (lado servidor)
+        |---LICENSE
+        |---package-lock.json
+        |---package.json
+    |---/execises
+        |---exercise1(express)
+        ...
+    |---/latex
+        |--- linopinto_pw2_24a_lab04.tex
+        |--- linopinto_pw2_24a_lab04.pdf
+    |--- README.md
+    |---.gitignore
+\end{lstlisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rúbrica}
+
+\begin{table}[H]
+    \centering
+    \caption{Tabla: Rúbrica para contenido del Informe y evidencias}
+    \begin{tabular}{|p{2cm}|p{6cm}|c|c|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Contenido y demostración}} & \textbf{Puntos} & \textbf{Checklist} & \textbf{Estudiante} & \textbf{Profesor} \\ \hline
+        1. GitHub & Repositorio se pudo clonar y se evidencia la estructura adecuada para revisar los entregables. (Se descontará puntos por error o observación) & 4 & × & 4 & \\ \hline
+        2. Commits & Hay porciones de código fuente asociado a los commits planificados con explicaciones detalladas. (El profesor puede preguntar para refrendar calificación) & 4 & × & 4 & \\ \hline
+        3. Ejecución & Se incluyen comandos para ejecuciones y pruebas del código fuente explicadas gradualmente que permitirían replicar el proyecto. (Se descontará puntos por cada omisión) & 4 & ×  & 4 & \\ \hline
+        4. Pregunta & Se responde con completitud a la pregunta formulada en la tarea. (El profesor puede preguntar para refrendar calificación) & 2 & × & 2 & \\ \hline
+        7. Ortografía & El documento no muestra errores ortográficos. (Se descontará puntos por error encontrado) & 2 & × & 1 & \\ \hline
+        8. Madurez & El Informe muestra de manera general una evolución de la madurez del código fuente con explicaciones puntuales pero precisas, agregando diagramas generados a partir del código fuente y refleja un acabado impecable. (El profesor puede preguntar para refrendar calificación) & 4 & × & 3 & \\ \hline
+        \multicolumn{2}{|c|}{\textbf{Total}} & 20 & Completo & 18 & \\ \hline
+    \end{tabular}
+\end{table}
+
+\section{Referencias}
+\begin{itemize}
+    \item \url{https://github.com/}
+    \item \url{https://git-scm.com/}
+    \item \url{https://www.w3schools.com/nodejs/}
+    \item \url{https://www.w3schools.com/xml/ajax_xmlhttprequest_send.asp}
+\end{itemize}
+
+
+%\pagebreak
+%\bibliographystyle{apalike}
+%\bibliographystyle{IEEEtranN}
+%\bibliography{bibliography}
+
+\end{document}
