@@ -23,10 +23,11 @@ class Picture:
     img = [[self._invColor(char) for char in row] for row in self.img]
     return Picture(img)
 
-  def join(self, p):
-    """ Devuelve una nueva figura poniendo la figura del argumento 
-        al lado derecho de la figura actual """
-    return Picture(None)
+  def join(self, other):
+    img = []
+    for i in range(len(self.img)):
+      img.append(self.img[i] + other.img[i])
+    return Picture(img)
 
   def up(self, p):
     return Picture(None)
