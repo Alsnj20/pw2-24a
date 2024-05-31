@@ -20,7 +20,7 @@ class Picture:
     return Picture(img)
 
   def negative(self):
-    img = [[self._invColor(char) for char in row] for row in self.img]
+    img = [(''.join([self._invColor(char) for char in row])) for row in self.img]
     return Picture(img)
 
   def join(self, other):
