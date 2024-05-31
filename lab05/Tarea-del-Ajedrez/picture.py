@@ -29,8 +29,13 @@ class Picture:
       img.append(self.img[i] + other.img[i])
     return Picture(img)
 
-  def up(self, p):
-    return Picture(None)
+  def up(self, other):
+    img = []
+    for rowS in self.img:
+      img.append(rowS)
+    for rowO in other.img:
+      img.append(rowO)
+    return Picture(img)
 
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la
