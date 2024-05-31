@@ -4,7 +4,7 @@ from pieces import *
 from interpreter import draw;
 
 def test():
-  p = Picture(PAWN).verticalMirror()
+  p = Picture(KNIGHT).horizontalMirror()
   draw(p)
   
   
