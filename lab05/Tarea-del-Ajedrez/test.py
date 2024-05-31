@@ -4,7 +4,7 @@ from pieces import *
 from interpreter import draw;
 
 def test():
-  p = Picture(KNIGHT).up(Picture(ROCK)).up(Picture(QUEEN)).up(Picture(KING)).up(Picture(BISHOP)).up(Picture(ROCK)).up(Picture(KNIGHT))
+  p = Picture(ROCK).under(Picture(SQUARE))
   draw(p)
   
   
