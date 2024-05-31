@@ -4,7 +4,7 @@ from pieces import *
 from interpreter import draw;
 
 def test():
-  p = Picture(ROCK).horizontalRepeat(4)
+  p = Picture(ROCK).verticalRepeat(2)
   draw(p)
   
   
