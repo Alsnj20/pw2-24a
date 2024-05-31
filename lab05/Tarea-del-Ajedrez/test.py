@@ -1,11 +1,16 @@
 from picture import Picture
 from chessPictures import *
 from pieces import *
+from interpreter import draw;
 
 def test():
-  for row in Picture(KING).verticalMirror():
+  p = Picture(PAWN).verticalMirror()
+  draw(p)
+  
+  
+def printPicture(p):
+  for row in p:
     print(row)
-
 
 if(__name__ == "__main__"):
   test()
