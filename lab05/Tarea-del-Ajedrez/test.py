@@ -4,7 +4,7 @@ from pieces import *
 from interpreter import draw;
 
 def test():
-  p = Picture(KNIGHT).horizontalMirror()
+  p = Picture(KNIGHT).negative()
   draw(p)
   
   
