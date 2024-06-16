@@ -1,7 +1,7 @@
 from django.db import models
 from courses.models import Course
 
-class Assigment(models.Model):
+class Assignment(models.Model):
     title = models.CharField(max_length=255, blank=False, null=False)
     description = models.TextField(blank=False, null=False)
     due_date = models.DateTimeField()

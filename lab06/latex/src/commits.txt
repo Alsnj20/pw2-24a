@@ -1,0 +1,87 @@
+commit b01493cbf970099021f37da47fb26ceb5a04e1de
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sat Jun 8 21:54:41 2024 -0500
+
+    Actualiza los requerimientos
+
+commit 78cc7f71b752a448bd5269a8a31d8d8d29d0fcc0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sat Jun 8 21:53:05 2024 -0500
+
+    Diagrama de la base de datos
+
+commit c525abb087e9baf79783a90d2efff65273940b9e
+Merge: 71800a5 54e2f47
+Author: Alsnj20 <marieljara656@gmail.com>
+Date:   Sat Jun 8 21:25:17 2024 -0500
+
+    Merge branch 'main' of https://github.com/JhonatanDczel/CoderDojo-UNSA
+
+commit 71800a5e4cdd7ec6bf19623c30e2a3568855f103
+Author: Alsnj20 <marieljara656@gmail.com>
+Date:   Sat Jun 8 21:25:14 2024 -0500
+
+    Migraciones de la app user y courses
+
+commit 54e2f4780f88a95754a33d6b80ebef48fd0fd7ae
+Author: L0rD1ego <diegoalejandrocarbajal@gmail.com>
+Date:   Sat Jun 8 21:19:10 2024 -0500
+
+    en este cambio se agrego group en groups y assigments en courses
+
+commit 2ba0eac33ff6b5c138563d40c9bc2268cc63177f
+Author: Alsnj20 <marieljara656@gmail.com>
+Date:   Sat Jun 8 20:58:06 2024 -0500
+
+    Añadiendo el esqueleto de course y content en la app courses
+
+commit 70f16b293f2dbf74e1df372e8924eee9f93e87a0
+Author: rikich3 <rchambillap@unsa.edu.pe>
+Date:   Sat Jun 8 20:45:15 2024 -0500
+
+    Realizado el esqueleto de users y students techers
+
+commit 6f0b78d49cb5bd5d3e54862eb8da30e96bcebf0e
+Author: Alsnj20 <marieljara656@gmail.com>
+Date:   Sat Jun 8 20:16:55 2024 -0500
+
+    Modificación del archivo con los requerimientos
+
+commit fceda264a2745cc2ae6d221933259bc4891bcd4d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sat Jun 8 16:20:33 2024 -0500
+
+    Estructura inicial
+
+commit acb10a5d94fbbbbf64e36f36f08f3088e39f5cdc
+Author: Alsnj20 <marieljara656@gmail.com>
+Date:   Sat Jun 8 16:17:21 2024 -0500
+
+    url
+
+commit 7beb6c8e480e9065c2e0e35045db3d83c5a758a1
+Author: Alsnj20 <marieljara656@gmail.com>
+Date:   Sat Jun 8 16:16:15 2024 -0500
+
+    Readme: Indicaciones para usar el projecto
+
+commit 133b54fefadf469534f1467de27930c988feb936
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Fri Jun 7 18:44:39 2024 -0500
+
+    Arregla error en el nombre del proyecto
+
+commit e6e034fee85432a4261cabe50de07a1863762ffa
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Fri Jun 7 18:43:24 2024 -0500
+
+    Agrega el archivo requeriments.txt
+
+commit 307422f74a2f5d3f33600b8e827484f2d83a2d51
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Fri Jun 7 18:31:41 2024 -0500
+
+    Carga las configuraciones iniciales
+    
+    Agrega las aplicaciones necesarias para el proyecto: users, assignments
+    y courses
