@@ -1,0 +1,11 @@
+# Para Python
+venv
+__pycache__
+db.sqlite3
+
+# Para LaTeX
+*.aux
+*.log
+*.out
+*.gz
+.DS_Store
