@@ -1,2 +1,8 @@
 # Enviroment Virtual
 venv/
+# django
+*.log
+*.pot
+*.pyc
+__pycache__
+media
