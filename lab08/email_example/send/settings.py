@@ -116,14 +116,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-EMAIL_HOST = 'marieljara656@gmail.com'
+
+STATIC_URL = '/static/'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mjarama@unsa.edu.pe',
-#EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'mjarama@unsa.edu.pe'
+EMAIL_HOST_PASSWORD = 'privacity'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
