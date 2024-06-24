@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import json
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,6 +22,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-4x^c#o-i1_n1#m+bmkg#59k8yw%&h%qvm=+ch-pc2ot)o%7w7n'
+STATIC_URL = '/static/'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+with open(BASE_DIR/'system'/'credentials.json') as f:
+    data = json.load(f)
+    EMAIL_HOST_USER = data['user']
+    EMAIL_HOST_PASSWORD = data['password']
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

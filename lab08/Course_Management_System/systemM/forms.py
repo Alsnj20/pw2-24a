@@ -23,4 +23,7 @@ class CourseForm(forms.ModelForm):
       'students': 'Estudiantes'
     }
 
-  
+class MessageForm(forms.Form):
+  student = forms.ModelChoiceField(queryset=Student.objects.all(), label="Estudiante")
+  course = forms.ModelChoiceField(queryset=Course.objects.all(), label="Curso")
+  message = forms.CharField(widget=forms.Textarea, label="Mensaje")
