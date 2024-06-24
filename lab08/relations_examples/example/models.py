@@ -27,15 +27,3 @@ class Character(models.Model):
 
   def __str__(self):
     return self.name
-  
-
-# Example BD MySQL
-class Persona(models.Model):
-    nombre = models.CharField(max_length=100)
-    apellido = models.CharField(max_length=100)
-    edad = models.IntegerField(blank=True, null=True)
-    email = models.CharField(max_length=100, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'Persona'

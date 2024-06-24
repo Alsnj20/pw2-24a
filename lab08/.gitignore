@@ -7,3 +7,6 @@ venv/
 __pycache__
 media
 credentials.json
+Latex/_minted-*
+Latex/build/*
+Latex/*.log
