@@ -1,0 +1,11 @@
+{% extends 'nav.html' %}
+{% block content %}
+<main>
+  <h1>Generar Certificado para Estudiante</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Generar Certificado</button>
+    </form>
+</main>
+{% endblock %}

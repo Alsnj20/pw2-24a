@@ -27,3 +27,8 @@ class MessageForm(forms.Form):
   student = forms.ModelChoiceField(queryset=Student.objects.all(), label="Estudiante")
   course = forms.ModelChoiceField(queryset=Course.objects.all(), label="Curso")
   message = forms.CharField(widget=forms.Textarea, label="Mensaje")
+
+class CertifiedForm(forms.Form):
+  student = forms.ModelChoiceField(queryset=Student.objects.all(), label="Estudiante")
+  course = forms.ModelChoiceField(queryset=Course.objects.all(), label="Curso")
+  message = forms.CharField(widget=forms.Textarea, label="Mensaje")
