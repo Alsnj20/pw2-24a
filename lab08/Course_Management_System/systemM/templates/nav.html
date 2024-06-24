@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Django</title>
+  <link rel="stylesheet" href="{% static 'style/styles.css' %}">
+</head>
+<body>
+<nav>
+  <header>
+    <div class="logo">
+      <div class="logo-1">CODER-DOJO</div>
+    </div>
+    <ul class="navlist">
+      <li><a href="/">Home</a></li>
+      <li><a href="{% url 'register_student' %}">Registrar Studiante</a></li>
+      <li><a href="{% url 'register_course' %}">Registrar Curso</a></li>
+    </ul>
+  </header>
+</nav>
+<main>
+{% block content %}
+{% endblock %}
+</main>
+</body>
+</html>

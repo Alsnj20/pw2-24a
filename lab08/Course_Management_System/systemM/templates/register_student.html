@@ -1,0 +1,11 @@
+{% extends 'nav.html' %}
+{% block content %}
+<main>
+  <h1>Registrar un nuevo Estudiante</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Registrar Estudiante</button>
+  </form>
+</main>
+{% endblock %}

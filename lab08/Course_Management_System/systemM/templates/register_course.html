@@ -1,0 +1,11 @@
+{% extends 'nav.html' %}
+{% block content %}
+<main>
+  <h1>Crear un Curso</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Crear Curso</button>
+  </form>
+</main>
+{% endblock %}
