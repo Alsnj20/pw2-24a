@@ -2,14 +2,25 @@
 {% block content %}
 <main>
   <h1>Lista de Cursos</h1>
+  <table>
+    <tr>
+      <th>Nombre del Curso</th>
+      <th>Profesor</th>
+      <th>Estudiantes</th>
+    </tr>
     {% for course in courses %}
-        <h2>{{ course.name }}</h2>
-        <p>Profesor: {{ course.teacher }}</p>
+    <tr>
+      <td>{{ course.name }}</td>
+      <td>{{ course.teacher }}</td>
+      <td>
         <ul>
-            {% for student in course.students.all %}
-                <li>{{ student.name }} - {{ student.email }}</li>
-            {% endfor %}
+          {% for student in course.students.all %}
+          <li>{{ student.name }} - {{ student.email }}</li>
+          {% endfor %}
         </ul>
+      </td>
+    </tr>
     {% endfor %}
+  </table>
 </main>
 {% endblock %}
