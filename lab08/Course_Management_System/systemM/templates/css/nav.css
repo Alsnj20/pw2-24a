@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: #333; 
+  color: white;
+  padding: 10px 20px; 
+}
+
+nav header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navlist {
+  list-style-type: none;
+  display: flex;
+}
+
+.navlist li {
+  margin-right: 20px; 
+  font-size: 1.2rem;
+}
+
+.navlist li a {
+  color: white; 
+  text-decoration: none; 
+  padding: 10px; 
+}
+
+.navlist li a:hover {
+  background-color: #555; 
+}
+
+.logo-1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
