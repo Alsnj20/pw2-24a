@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class QuestionServiceService {
+export class QuestionService {
   private questions = [
     { question: '¿Cuál es la fórmula química del agua?', options: ['H2O', 'CO2', 'NaCl'], correctAnswer: 'H2O' },
     { question: '¿Cuál es la ley de Newton que describe la acción y la reacción?', options: ['Primera ley', 'Segunda ley', 'Tercera ley'], correctAnswer: 'Tercera ley' },
