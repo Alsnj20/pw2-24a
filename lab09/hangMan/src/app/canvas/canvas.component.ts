@@ -1,5 +1,8 @@
 import { Component, ElementRef, ViewChild, Input, AfterViewInit, OnChanges } from '@angular/core';
 
+// Declaracion para rough.js
+declare var rough: any;
+
 @Component({
   selector: 'app-canvas',
   standalone: true,
@@ -18,6 +21,7 @@ export class CanvasComponent implements AfterViewInit, OnChanges {
 
   ngAfterViewInit(): void {
     this.ctx = this.canvas ? this.canvas.nativeElement.getContext('2d'): null;
+    this.roughCanvas = rough.canvas(this.canvas ? this.canvas.nativeElement : null);
     this.drawHangman(this.step);
   }
 
