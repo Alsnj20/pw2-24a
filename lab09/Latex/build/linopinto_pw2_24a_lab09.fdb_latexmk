@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1720326878.56216 "c:/Ordenador/List/PW2/pw2-24a/lab09/Latex/linopinto_pw2_24a_lab09.tex" "build/linopinto_pw2_24a_lab09.pdf" "linopinto_pw2_24a_lab09" 1720326880.61839 0
+["pdflatex"] 1720327135.62601 "c:/Ordenador/List/PW2/pw2-24a/lab09/Latex/linopinto_pw2_24a_lab09.tex" "build/linopinto_pw2_24a_lab09.pdf" "linopinto_pw2_24a_lab09" 1720327137.67556 0
   "../hangMan/src/app/app.component.html" 1720320627 212 1f052bb0f8581057205bc0f085be97f4 ""
   "../hangMan/src/app/app.component.ts" 1720322109 1438 8c2afae49fe7a2e3ec1f3df1ee1e8946 ""
   "../hangMan/src/app/canvas/canvas.component.html" 1720319989 120 90f2af068a4b4da006b98de7aafa2422 ""
@@ -123,15 +123,15 @@
   "_minted-linopinto_pw2_24a_lab09/71585E02709CF49F23D0F8013C808815220A7258A85C11DBDC2DF30C8D9E01C8.pygtex" 1720325554 2444 8af0af19a064da7eb026d121e811d95b ""
   "_minted-linopinto_pw2_24a_lab09/EC48E8A4E41E40624B7F8ECB6DEF5CC7220A7258A85C11DBDC2DF30C8D9E01C8.pygtex" 1720325573 914 e16468f793deb7d4932e9336f31a4fb6 ""
   "_minted-linopinto_pw2_24a_lab09/default.pygstyle" 1720323298 6530 74aba51736a5bc6590f8f7dd413c6f27 ""
-  "build/linopinto_pw2_24a_lab09.aux" 1720326880 6886 faf011f827f9754226823e712311a87b "pdflatex"
-  "build/linopinto_pw2_24a_lab09.toc" 1720326880 924 da663f6884923c02f96325ea14326936 "pdflatex"
-  "c:/Ordenador/List/PW2/pw2-24a/lab09/Latex/linopinto_pw2_24a_lab09.tex" 1720326875 14475 38ec27e46bf7dcb41b5633e18d799b1a ""
+  "build/linopinto_pw2_24a_lab09.aux" 1720327137 6886 1cd8eb49d00304dad647f47628d03afc "pdflatex"
+  "build/linopinto_pw2_24a_lab09.toc" 1720327137 924 da663f6884923c02f96325ea14326936 "pdflatex"
+  "c:/Ordenador/List/PW2/pw2-24a/lab09/Latex/linopinto_pw2_24a_lab09.tex" 1720327132 14463 9f8239c1622459390a102f2233622fd2 ""
   "img/commits.png" 1720325890 144550 61c9045186683c2e0f2be262651a4273 ""
   "img/episunsa.png" 1719240571 13841 0637f7edddb222131a55c348b14258ee ""
   "img/logo_abet.png" 1719240571 7347 8c4b258767e784f94d8fe76039ec1e5c ""
   "img/prueba.png" 1720326287 33685 109a2688bde49e763cdb47183910d86f ""
   "img/prueba2.png" 1720326294 34723 c283fe9915224384efaaa481547d831a ""
-  "linopinto_pw2_24a_lab09.tex" 1720326875 14475 38ec27e46bf7dcb41b5633e18d799b1a ""
+  "linopinto_pw2_24a_lab09.tex" 1720327132 14463 9f8239c1622459390a102f2233622fd2 ""
   (generated)
   "build/linopinto_pw2_24a_lab09.aux"
   "build/linopinto_pw2_24a_lab09.log"
