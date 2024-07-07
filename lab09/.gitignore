@@ -1,0 +1,4 @@
+Latex/_minted-*
+Latex/build/*
+Latex/*.log
+.aux

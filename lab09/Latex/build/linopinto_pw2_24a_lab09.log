@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.6)  6 JUL 2024 23:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.6)  6 JUL 2024 23:28
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -639,11 +639,11 @@ File: img/logo_abet.png Graphic file (type png)
 Package pdftex.def Info: img/logo_abet.png  used on input line 176.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
 [3]
-<img/commits.png, id=53, 606.76688pt x 770.12718pt>
+<img/commits.png, id=55, 816.80156pt x 785.18344pt>
 File: img/commits.png Graphic file (type png)
 <use img/commits.png>
 Package pdftex.def Info: img/commits.png  used on input line 179.
-(pdftex.def)             Requested size: 399.21791pt x 506.71085pt.
+(pdftex.def)             Requested size: 399.21791pt x 383.7728pt.
 
 
 File: img/episunsa.png Graphic file (type png)
@@ -720,55 +720,81 @@ File: img/logo_abet.png Graphic file (type png)
 Package pdftex.def Info: img/logo_abet.png  used on input line 53.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
 [10]) (_minted-linopinto_pw2_24a_lab09/71585E02709CF49F23D0F8013C808815220A7258A85C11DBDC2DF30C8D9E01C8.pygtex) (_minted-linopinto_pw2_24a_lab09/7D7E6D2A32329FFA408159FAD799BCBBFF40DF7B7AF5FC6A00CBB5E1C98C2A01.pygtex)
+<img/prueba.png, id=93, 417.81094pt x 713.66624pt>
+File: img/prueba.png Graphic file (type png)
+<use img/prueba.png>
+Package pdftex.def Info: img/prueba.png  used on input line 271.
+(pdftex.def)             Requested size: 133.07489pt x 227.31067pt.
+<img/prueba2.png, id=94, 435.87843pt x 703.87968pt>
+File: img/prueba2.png Graphic file (type png)
+<use img/prueba2.png>
+Package pdftex.def Info: img/prueba2.png  used on input line 274.
+(pdftex.def)             Requested size: 133.07489pt x 214.89243pt.
+
 
 File: img/episunsa.png Graphic file (type png)
 <use img/episunsa.png>
-Package pdftex.def Info: img/episunsa.png  used on input line 268.
+Package pdftex.def Info: img/episunsa.png  used on input line 278.
 (pdftex.def)             Requested size: 85.35826pt x 24.29674pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 268.
+Package pdftex.def Info: img/logo_abet.png  used on input line 278.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
 [11]
 
 File: img/episunsa.png Graphic file (type png)
 <use img/episunsa.png>
-Package pdftex.def Info: img/episunsa.png  used on input line 274.
+Package pdftex.def Info: img/episunsa.png  used on input line 278.
 (pdftex.def)             Requested size: 85.35826pt x 24.29674pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 274.
+Package pdftex.def Info: img/logo_abet.png  used on input line 278.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
-[12]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 278.
+[12 <./img/prueba.png> <./img/prueba2.png>]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 290.
+
+Overfull \hbox (36.23697pt too wide) in paragraph at lines 319--330
+ [][] 
+ []
+
 
 
 File: img/episunsa.png Graphic file (type png)
 <use img/episunsa.png>
-Package pdftex.def Info: img/episunsa.png  used on input line 313.
+Package pdftex.def Info: img/episunsa.png  used on input line 331.
 (pdftex.def)             Requested size: 85.35826pt x 24.29674pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 313.
+Package pdftex.def Info: img/logo_abet.png  used on input line 331.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
-[13] (c:\Ordenador\List\PW2\pw2-24a\lab09\Latex\build\linopinto_pw2_24a_lab09.aux)
+[13]
+
+File: img/episunsa.png Graphic file (type png)
+<use img/episunsa.png>
+Package pdftex.def Info: img/episunsa.png  used on input line 340.
+(pdftex.def)             Requested size: 85.35826pt x 24.29674pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 340.
+(pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
+[14] (c:\Ordenador\List\PW2\pw2-24a\lab09\Latex\build\linopinto_pw2_24a_lab09.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17945 strings out of 473904
- 309122 string characters out of 5727073
- 1948908 words of memory out of 5000000
- 40499 multiletter control sequences out of 15000+600000
+ 17966 strings out of 473904
+ 309506 string characters out of 5727073
+ 1953908 words of memory out of 5000000
+ 40516 multiletter control sequences out of 15000+600000
  561447 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,16n,79p,639b,1175s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ASUS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on c:\Ordenador\List\PW2\pw2-24a\lab09\Latex\build\linopinto_pw2_24a_lab09.pdf (13 pages, 287151 bytes).
+Output written on c:\Ordenador\List\PW2\pw2-24a\lab09\Latex\build\linopinto_pw2_24a_lab09.pdf (14 pages, 359606 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 57 named destinations out of 1000 (max. 500000)
- 104 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 240 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 122 words of extra memory for PDF output out of 10000 (max. 10000000)
 
