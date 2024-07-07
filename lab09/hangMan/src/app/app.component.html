@@ -1,3 +1,8 @@
-<app-canvas></app-canvas>
-<app-keyboard></app-keyboard>
+<app-canvas [step]="tries_number"></app-canvas>
+<app-keyboard
+  (addTries)="addTries()"
+  [MAX_TRIES]="MAX_TRIES"
+  [tries_number]="tries_number"
+  [wordPrimary]="WORD"
+></app-keyboard>
 <router-outlet />

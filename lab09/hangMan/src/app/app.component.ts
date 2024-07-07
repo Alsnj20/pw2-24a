@@ -11,5 +11,48 @@ import { KeyboardComponent } from './keyboard/keyboard.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'hangMan';
+  readonly WORD:string = '';
+
+  readonly WORD_LIST = [
+    'ANGULAR',
+    'JAVASCRIPT',
+    'TYPESCRIPT',
+    'PROGRAMMING',
+    'DEVELOPMENT',
+    'COMPONENT',
+    'DIRECTIVE',
+    'SERVICE',
+    'MODULE',
+    'ROUTING',
+    'LIFE',
+    'CYCLE',
+    'HTTP',
+    'CLIENT',
+    'SERVER',
+    'DATABASE',
+    'QUERY',
+    'RESPONSE',
+    'REQUEST',
+    'OBSERVABLE',
+    'SUBSCRIPTION',
+    'OPERATOR',
+    'FUNCTION',
+    'COMPILATION',
+    'TRANSPILATION',
+    'INTERPRETATION',
+  ]
+
+  readonly TITLE = 'Ahorcado';
+  readonly MAX_TRIES = 6;
+  tries_number = 0;
+
+  constructor() {
+    const random = Math.floor(Math.random() * this.WORD_LIST.length);
+    this.WORD = this.WORD_LIST[random];
+  }
+
+  addTries() {
+    this.tries_number += 1;
+  }
+
 }
