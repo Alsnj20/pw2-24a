@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-keyboard',
+  standalone: true,
   templateUrl: './keyboard.component.html',
   styleUrls: ['./keyboard.component.css']
 })

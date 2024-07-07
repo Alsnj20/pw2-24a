@@ -1,5 +1,5 @@
 <div class="keyboard">
-  <button *ngFor="let letter of letters" (click)="selectLetter(letter)">
-    {{ letter }}
-  </button>
+  @for (letter of letters; track $index) {
+    <button (click)="selectLetter(letter)">{{ letter }}</button>
+  }
 </div>
