@@ -1,1 +1,5 @@
-<p>keyboard works!</p>
+<div class="keyboard">
+  <button *ngFor="let letter of letters" (click)="selectLetter(letter)">
+    {{ letter }}
+  </button>
+</div>
