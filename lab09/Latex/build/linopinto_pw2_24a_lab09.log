@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.6)  6 JUL 2024 23:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.6)  6 JUL 2024 23:34
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -679,15 +679,15 @@ File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
 Package pdftex.def Info: img/logo_abet.png  used on input line 42.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
-[6]) (_minted-linopinto_pw2_24a_lab09/EC48E8A4E41E40624B7F8ECB6DEF5CC7220A7258A85C11DBDC2DF30C8D9E01C8.pygtex) (_minted-linopinto_pw2_24a_lab09/D41D8CD98F00B204E9800998ECF8427EFF40DF7B7AF5FC6A00CBB5E1C98C2A01.pygtex)
+[6]) (_minted-linopinto_pw2_24a_lab09/EC48E8A4E41E40624B7F8ECB6DEF5CC7220A7258A85C11DBDC2DF30C8D9E01C8.pygtex)
 
 File: img/episunsa.png Graphic file (type png)
 <use img/episunsa.png>
-Package pdftex.def Info: img/episunsa.png  used on input line 228.
+Package pdftex.def Info: img/episunsa.png  used on input line 223.
 (pdftex.def)             Requested size: 85.35826pt x 24.29674pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 228.
+Package pdftex.def Info: img/logo_abet.png  used on input line 223.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
 [7] (_minted-linopinto_pw2_24a_lab09/4C5478382B53ECB2A573E5C5189962A88E2F7E0439E3B75EC7801868F203AF02.pygtex
 
@@ -703,11 +703,11 @@ Package pdftex.def Info: img/logo_abet.png  used on input line 52.
 
 File: img/episunsa.png Graphic file (type png)
 <use img/episunsa.png>
-Package pdftex.def Info: img/episunsa.png  used on input line 248.
+Package pdftex.def Info: img/episunsa.png  used on input line 243.
 (pdftex.def)             Requested size: 85.35826pt x 24.29674pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 248.
+Package pdftex.def Info: img/logo_abet.png  used on input line 243.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
 [9] (_minted-linopinto_pw2_24a_lab09/0CFF6C7A21F661D5C68AAFE2ACB20E078E2F7E0439E3B75EC7801868F203AF02.pygtex
 
@@ -719,41 +719,41 @@ File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
 Package pdftex.def Info: img/logo_abet.png  used on input line 53.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
-[10]) (_minted-linopinto_pw2_24a_lab09/71585E02709CF49F23D0F8013C808815220A7258A85C11DBDC2DF30C8D9E01C8.pygtex) (_minted-linopinto_pw2_24a_lab09/7D7E6D2A32329FFA408159FAD799BCBBFF40DF7B7AF5FC6A00CBB5E1C98C2A01.pygtex)
+[10]) (_minted-linopinto_pw2_24a_lab09/71585E02709CF49F23D0F8013C808815220A7258A85C11DBDC2DF30C8D9E01C8.pygtex)
 <img/prueba.png, id=93, 417.81094pt x 713.66624pt>
 File: img/prueba.png Graphic file (type png)
 <use img/prueba.png>
-Package pdftex.def Info: img/prueba.png  used on input line 271.
+Package pdftex.def Info: img/prueba.png  used on input line 264.
 (pdftex.def)             Requested size: 133.07489pt x 227.31067pt.
 <img/prueba2.png, id=94, 435.87843pt x 703.87968pt>
 File: img/prueba2.png Graphic file (type png)
 <use img/prueba2.png>
-Package pdftex.def Info: img/prueba2.png  used on input line 274.
+Package pdftex.def Info: img/prueba2.png  used on input line 267.
 (pdftex.def)             Requested size: 133.07489pt x 214.89243pt.
 
 
 File: img/episunsa.png Graphic file (type png)
 <use img/episunsa.png>
-Package pdftex.def Info: img/episunsa.png  used on input line 278.
+Package pdftex.def Info: img/episunsa.png  used on input line 271.
 (pdftex.def)             Requested size: 85.35826pt x 24.29674pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 278.
+Package pdftex.def Info: img/logo_abet.png  used on input line 271.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
 [11]
 
 File: img/episunsa.png Graphic file (type png)
 <use img/episunsa.png>
-Package pdftex.def Info: img/episunsa.png  used on input line 278.
+Package pdftex.def Info: img/episunsa.png  used on input line 271.
 (pdftex.def)             Requested size: 85.35826pt x 24.29674pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 278.
+Package pdftex.def Info: img/logo_abet.png  used on input line 271.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
 [12 <./img/prueba.png> <./img/prueba2.png>]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 290.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 283.
 
-Overfull \hbox (36.23697pt too wide) in paragraph at lines 319--330
+Overfull \hbox (36.23697pt too wide) in paragraph at lines 312--323
  [][] 
  []
 
@@ -761,21 +761,21 @@ Overfull \hbox (36.23697pt too wide) in paragraph at lines 319--330
 
 File: img/episunsa.png Graphic file (type png)
 <use img/episunsa.png>
-Package pdftex.def Info: img/episunsa.png  used on input line 331.
+Package pdftex.def Info: img/episunsa.png  used on input line 324.
 (pdftex.def)             Requested size: 85.35826pt x 24.29674pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 331.
+Package pdftex.def Info: img/logo_abet.png  used on input line 324.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
 [13]
 
 File: img/episunsa.png Graphic file (type png)
 <use img/episunsa.png>
-Package pdftex.def Info: img/episunsa.png  used on input line 340.
+Package pdftex.def Info: img/episunsa.png  used on input line 333.
 (pdftex.def)             Requested size: 85.35826pt x 24.29674pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 340.
+Package pdftex.def Info: img/logo_abet.png  used on input line 333.
 (pdftex.def)             Requested size: 34.14322pt x 30.40825pt.
 [14] (c:\Ordenador\List\PW2\pw2-24a\lab09\Latex\build\linopinto_pw2_24a_lab09.aux)
  ***********
@@ -784,15 +784,15 @@ L3 programming layer <2024-05-27>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17966 strings out of 473904
- 309506 string characters out of 5727073
+ 17948 strings out of 473904
+ 307944 string characters out of 5727073
  1953908 words of memory out of 5000000
- 40516 multiletter control sequences out of 15000+600000
+ 40504 multiletter control sequences out of 15000+600000
  561447 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,16n,79p,639b,1175s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ASUS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on c:\Ordenador\List\PW2\pw2-24a\lab09\Latex\build\linopinto_pw2_24a_lab09.pdf (14 pages, 359606 bytes).
+Output written on c:\Ordenador\List\PW2\pw2-24a\lab09\Latex\build\linopinto_pw2_24a_lab09.pdf (14 pages, 359119 bytes).
 PDF statistics:
  240 PDF objects out of 1000 (max. 8388607)
  61 named destinations out of 1000 (max. 500000)
