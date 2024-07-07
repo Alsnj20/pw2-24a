@@ -1,0 +1,22 @@
+.hangman-game {
+  text-align: center;
+}
+
+.word {
+  font-size: 2em;
+  margin: 20px 0;
+}
+
+.attempts {
+  margin: 10px 0;
+}
+
+.letters {
+  margin: 20px 0;
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1em;
+}

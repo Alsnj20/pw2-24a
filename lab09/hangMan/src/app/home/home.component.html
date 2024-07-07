@@ -1,1 +1,20 @@
-<p>home works!</p>
+<div class="hangman-game">
+  <h1>Juego del Ahorcado</h1>
+  <p class="word">{{ displayedWord.join(' ') }}</p>
+  <p class="attempts">Intentos incorrectos: {{ incorrectGuesses }} de {{ maxGuesses }}</p>
+  <div *ngIf="gameOver">
+    <p *ngIf="!displayedWord.includes('_')">¡Ganaste!</p>
+    <p *ngIf="incorrectGuesses >= maxGuesses">¡Perdiste! La palabra era: {{ selectedWord }}</p>
+    <button (click)="newGame()">Nuevo Juego</button>
+  </div>
+  <div *ngIf="!gameOver">
+    <p>Elige una letra:</p>
+    <div class="letters">
+      <button *ngFor="let letter of 'abcdefghijklmnopqrstuvwxyz'.split('')"
+              (click)="guessLetter(letter)"
+              [disabled]="guessedLetters.includes(letter)">
+        {{ letter }}
+      </button>
+    </div>
+  </div>
+</div>
