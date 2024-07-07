@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}flex flex\PYGZhy{}col gap\PYGZhy{}10 mt\PYGZhy{}20 text\PYGZhy{}black\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+  \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}flex justify\PYGZhy{}center gap\PYGZhy{}4\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input}
+      \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text\PYGZdq{}}
+      \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}letter\PYGZdq{}}
+      \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}letter\PYGZdq{}}
+      \PYG{err}{[}\PYG{n+na}{maxLength}\PYG{err}{]=\PYGZdq{}}\PYG{n+na}{1}\PYG{err}{\PYGZdq{}}
+      \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}w\PYGZhy{}12 px\PYGZhy{}4 py\PYGZhy{}2 rounded\PYGZhy{}md text\PYGZhy{}2xl\PYGZdq{}}
+      \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}\PYGZob{}\PYGZob{}userLetter\PYGZcb{}\PYGZcb{}\PYGZdq{}}
+      \PYG{err}{(}\PYG{n+na}{change}\PYG{err}{)=\PYGZdq{}}\PYG{n+na}{changeLetter}\PYG{err}{(\PYGZdl{}}\PYG{n+na}{event}\PYG{err}{)\PYGZdq{}}
+    \PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{button} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}bg\PYGZhy{}gradient\PYGZhy{}to\PYGZhy{}r from\PYGZhy{}red\PYGZhy{}500 to\PYGZhy{}orange\PYGZhy{}500 px\PYGZhy{}6 py\PYGZhy{}3 rounded\PYGZhy{}md font\PYGZhy{}bold text\PYGZhy{}white hover:scale\PYGZhy{}105 active:scale\PYGZhy{}95 transition\PYGZhy{}transform\PYGZdq{}} \PYG{err}{(}\PYG{n+na}{click}\PYG{err}{)=\PYGZdq{}}\PYG{n+na}{userTry}\PYG{err}{()\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+      Comprobar
+    \PYG{p}{\PYGZlt{}/}\PYG{n+nt}{button}\PYG{p}{\PYGZgt{}}
+  \PYG{p}{\PYGZlt{}/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+
+  \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}flex justify\PYGZhy{}center gap\PYGZhy{}2\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    @for (letter of userWord; track \PYGZdl{}index) \PYGZob{}
+      \PYG{p}{\PYGZlt{}}\PYG{n+nt}{span} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}w\PYGZhy{}10 border\PYGZhy{}b\PYGZhy{}2 h\PYGZhy{}14 text\PYGZhy{}center text\PYGZhy{}3xl flex justify\PYGZhy{}center items\PYGZhy{}end font\PYGZhy{}bold\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        \PYGZob{}\PYGZob{}letter\PYGZcb{}\PYGZcb{}
+      \PYG{p}{\PYGZlt{}/}\PYG{n+nt}{span}\PYG{p}{\PYGZgt{}}
+    \PYGZcb{}
+  \PYG{p}{\PYGZlt{}/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\end{Verbatim}

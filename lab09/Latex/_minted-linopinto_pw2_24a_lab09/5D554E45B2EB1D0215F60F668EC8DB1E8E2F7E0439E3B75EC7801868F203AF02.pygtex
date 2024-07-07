@@ -1,0 +1,66 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{import}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{Component}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}@angular/core\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{RouterOutlet}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}@angular/router\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{CanvasComponent}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}./canvas/canvas.component\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{KeyboardComponent}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}./keyboard/keyboard.component\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k+kd}{@Component}\PYG{p}{(\PYGZob{}}
+\PYG{+w}{  }\PYG{n+nx}{selector}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}app\PYGZhy{}root\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n+nx}{standalone}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{true}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n+nx}{imports}\PYG{o}{:}\PYG{+w}{ }\PYG{p}{[}\PYG{n+nx}{RouterOutlet}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{CanvasComponent}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{KeyboardComponent}\PYG{p}{],}
+\PYG{+w}{  }\PYG{n+nx}{templateUrl}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}./app.component.html\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n+nx}{styleUrl}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}./app.component.css\PYGZsq{}}
+\PYG{p}{\PYGZcb{})}
+\PYG{k}{export}\PYG{+w}{ }\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nx}{AppComponent}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n+nx}{WORD}\PYG{o}{:}\PYG{k+kt}{string}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{readonly}\PYG{+w}{ }\PYG{n+nx}{WORD\PYGZus{}LIST}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}ANGULAR\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}JAVASCRIPT\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}TYPESCRIPT\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}PROGRAMMING\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}DEVELOPMENT\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}COMPONENT\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}DIRECTIVE\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}SERVICE\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}MODULE\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}ROUTING\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}LIFE\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}CYCLE\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}HTTP\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}CLIENT\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}SERVER\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}DATABASE\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}QUERY\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}RESPONSE\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}REQUEST\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}OBSERVABLE\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}SUBSCRIPTION\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}OPERATOR\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}FUNCTION\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}COMPILATION\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}TRANSPILATION\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s1}{\PYGZsq{}INTERPRETATION\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{  }\PYG{p}{]}
+
+\PYG{+w}{  }\PYG{k}{readonly}\PYG{+w}{ }\PYG{n+nx}{TITLE}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}Ahorcado\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{readonly}\PYG{+w}{ }\PYG{n+nx}{MAX\PYGZus{}TRIES}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{6}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n+nx}{tries\PYGZus{}number}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{0}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k+kr}{constructor}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{random}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{floor}\PYG{p}{(}\PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{random}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{WORD\PYGZus{}LIST}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{WORD}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{WORD\PYGZus{}LIST}\PYG{p}{[}\PYG{n+nx}{random}\PYG{p}{];}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{n+nx}{addTries}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{tries\PYGZus{}number}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{l+m+mf}{1}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{tries\PYGZus{}number}\PYG{+w}{ }\PYG{o}{===}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{MAX\PYGZus{}TRIES}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Perdiste\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{      }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{WORD}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{WORD\PYGZus{}LIST}\PYG{p}{[}\PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{floor}\PYG{p}{(}\PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{random}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{WORD\PYGZus{}LIST}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{)];}
+\PYG{+w}{      }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{tries\PYGZus{}number}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Tarea}{3}{section.1}%
+\contentsline {section}{\numberline {2}Commits}{4}{section.2}%
+\contentsline {section}{\numberline {3}Equipos y materiales utilizados}{5}{section.3}%
+\contentsline {section}{\numberline {4}Ejercicio Propuestos: Juego del ahorcado}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Componente app}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Componente canvas}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Componente keyboard}{10}{subsection.4.3}%
+\contentsline {section}{\numberline {5}URL del repositorio en GitHub}{12}{section.5}%
+\contentsline {section}{\numberline {6}Estructura de laboratorio 09}{13}{section.6}%
+\contentsline {section}{\numberline {7}Rúbrica}{13}{section.7}%
+\contentsline {section}{\numberline {8}Referencias}{13}{section.8}%

@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{app\PYGZhy{}canvas} \PYG{err}{[}\PYG{n+na}{step}\PYG{err}{]=\PYGZdq{}}\PYG{n+na}{tries\PYGZus{}number}\PYG{err}{\PYGZdq{}}\PYG{p}{\PYGZgt{}\PYGZlt{}/}\PYG{n+nt}{app\PYGZhy{}canvas}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{app\PYGZhy{}keyboard}
+  \PYG{err}{(}\PYG{n+na}{addTries}\PYG{err}{)=\PYGZdq{}}\PYG{n+na}{addTries}\PYG{err}{()\PYGZdq{}}
+  \PYG{err}{[}\PYG{n+na}{MAX\PYGZus{}TRIES}\PYG{err}{]=\PYGZdq{}}\PYG{n+na}{MAX\PYGZus{}TRIES}\PYG{err}{\PYGZdq{}}
+  \PYG{err}{[}\PYG{n+na}{tries\PYGZus{}number}\PYG{err}{]=\PYGZdq{}}\PYG{n+na}{tries\PYGZus{}number}\PYG{err}{\PYGZdq{}}
+  \PYG{err}{[}\PYG{n+na}{wordPrimary}\PYG{err}{]=\PYGZdq{}}\PYG{n+na}{WORD}\PYG{err}{\PYGZdq{}}
+\PYG{p}{\PYGZgt{}\PYGZlt{}/}\PYG{n+nt}{app\PYGZhy{}keyboard}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{router\PYGZhy{}outlet} \PYG{p}{/\PYGZgt{}}
+\end{Verbatim}

@@ -11,7 +11,7 @@ import { KeyboardComponent } from './keyboard/keyboard.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  readonly WORD:string = '';
+  WORD:string = '';
 
   readonly WORD_LIST = [
     'ANGULAR',
@@ -53,6 +53,12 @@ export class AppComponent {
 
   addTries() {
     this.tries_number += 1;
+
+    if (this.tries_number === this.MAX_TRIES) {
+      alert('Perdiste');
+      this.WORD = this.WORD_LIST[Math.floor(Math.random() * this.WORD_LIST.length)];
+      this.tries_number = 0;
+    }
   }
 
 }

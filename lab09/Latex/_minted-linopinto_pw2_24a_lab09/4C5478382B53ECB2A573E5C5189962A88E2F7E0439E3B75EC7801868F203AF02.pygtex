@@ -1,0 +1,78 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{import}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{Component}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{ElementRef}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{ViewChild}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{Input}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{AfterViewInit}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{OnChanges}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{SimpleChanges}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}@angular/core\PYGZsq{}}\PYG{p}{;}
+
+\PYG{c+c1}{// Declaracion para rough.js}
+\PYG{k+kr}{declare}\PYG{+w}{ }\PYG{k+kd}{var}\PYG{+w}{ }\PYG{n+nx}{rough}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{any}\PYG{p}{;}
+
+\PYG{k+kd}{@Component}\PYG{p}{(\PYGZob{}}
+\PYG{+w}{  }\PYG{n+nx}{selector}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}app\PYGZhy{}canvas\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n+nx}{standalone}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{true}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n+nx}{imports}\PYG{o}{:}\PYG{+w}{ }\PYG{p}{[],}
+\PYG{+w}{  }\PYG{n+nx}{templateUrl}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}./canvas.component.html\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n+nx}{styleUrl}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}./canvas.component.css\PYGZsq{}}
+\PYG{p}{\PYGZcb{})}
+
+\PYG{k}{export}\PYG{+w}{ }\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nx}{CanvasComponent}\PYG{+w}{ }\PYG{k}{implements}\PYG{+w}{ }\PYG{n+nx}{AfterViewInit}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{OnChanges}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k+kd}{@ViewChild}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}itemCanvas\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{static}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{false}\PYG{+w}{ }\PYG{p}{\PYGZcb{})}\PYG{+w}{ }\PYG{n+nx}{canvas}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{ElementRef}\PYG{o}{\PYGZlt{}}\PYG{n+nx}{HTMLCanvasElement}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{o}{|}\PYG{+w}{ }\PYG{k+kc}{undefined}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k+kd}{@Input}\PYG{p}{()}\PYG{+w}{ }\PYG{n+nx}{step}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{number}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{0}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{private}\PYG{+w}{ }\PYG{n+nx}{ctx}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{CanvasRenderingContext2D}\PYG{+w}{ }\PYG{o}{|}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n+nx}{roughCanvas}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{any}\PYG{p}{;}
+
+
+\PYG{+w}{  }\PYG{n+nx}{ngAfterViewInit}\PYG{p}{()}\PYG{o}{:}\PYG{+w}{ }\PYG{o+ow}{void}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{canvas}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{ctx}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{canvas}\PYG{p}{.}\PYG{n+nx}{nativeElement}\PYG{p}{.}\PYG{n+nx}{getContext}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}2d\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{      }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{rough}\PYG{p}{.}\PYG{n+nx}{canvas}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{canvas}\PYG{p}{.}\PYG{n+nx}{nativeElement}\PYG{p}{);}
+\PYG{+w}{      }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{drawHangman}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{step}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{n+nx}{ngOnChanges}\PYG{p}{(}\PYG{n+nx}{changes}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{SimpleChanges}\PYG{p}{)}\PYG{o}{:}\PYG{+w}{ }\PYG{o+ow}{void}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nx}{changes}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}step\PYGZsq{}}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{o}{!}\PYG{n+nx}{changes}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}step\PYGZsq{}}\PYG{p}{].}\PYG{n+nx}{isFirstChange}\PYG{p}{())}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{drawHangman}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{step}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{n+nx}{drawHangman}\PYG{p}{(}\PYG{n+nx}{step}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{number}\PYG{p}{)}\PYG{o}{:}\PYG{+w}{ }\PYG{o+ow}{void}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{canvas}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{ctx}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{ctx}\PYG{o}{?}\PYG{p}{.}\PYG{n+nx}{clearRect}\PYG{p}{(}\PYG{l+m+mf}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{canvas}\PYG{o}{?}\PYG{p}{.}\PYG{n+nx}{nativeElement}\PYG{p}{.}\PYG{n+nx}{width}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{canvas}\PYG{o}{?}\PYG{p}{.}\PYG{n+nx}{nativeElement}\PYG{p}{.}\PYG{n+nx}{height}\PYG{p}{);}
+
+
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mf}{0}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n+nx}{step}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{50}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{450}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{200}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{450}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// Base}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{125}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{450}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{125}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{50}\PYG{p}{);}\PYG{+w}{  }\PYG{c+c1}{// Poste vertical}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{125}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{50}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{50}\PYG{p}{);}\PYG{+w}{   }\PYG{c+c1}{// Poste horizontal}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{50}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{100}\PYG{p}{);}\PYG{+w}{  }\PYG{c+c1}{// Cuerda}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{circle}\PYG{p}{(}\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{140}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{40}\PYG{p}{);}\PYG{+w}{     }\PYG{c+c1}{// Cabeza}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mf}{1}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n+nx}{step}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{180}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{350}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// Cuerpo}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mf}{2}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n+nx}{step}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{350}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{240}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{450}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// Pierna izquierda}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mf}{3}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n+nx}{step}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{350}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{320}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{450}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// Pierna derecha}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mf}{4}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n+nx}{step}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{220}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{200}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// Brazo izquierdo}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mf}{5}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n+nx}{step}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{340}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{200}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// Brazo derecho}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mf}{6}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n+nx}{step}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{circle}\PYG{p}{(}\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{140}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{40}\PYG{p}{);}\PYG{+w}{     }\PYG{c+c1}{// Cabeza}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{270}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{130}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{260}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{120}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// Ojo derecho}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{260}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{130}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{270}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{120}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{290}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{130}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{300}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{120}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// Ojo izquierdo}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{300}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{130}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{290}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{120}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{line}\PYG{p}{(}\PYG{l+m+mf}{270}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{150}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{300}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{145}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{roughness}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{4}\PYG{+w}{ }\PYG{p}{\PYGZcb{});}\PYG{+w}{ }\PYG{c+c1}{// Boca}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{roughCanvas}\PYG{p}{.}\PYG{n+nx}{arc}\PYG{p}{(}\PYG{l+m+mf}{280}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{148}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{20}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{10}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.6}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{PI}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kc}{true}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// Lengua}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

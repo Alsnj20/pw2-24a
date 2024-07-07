@@ -1,0 +1,61 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{import}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{Component}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{Input}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{Output}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{EventEmitter}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{OnInit}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}@angular/core\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k+kd}{@Component}\PYG{p}{(\PYGZob{}}
+\PYG{+w}{  }\PYG{n+nx}{selector}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}app\PYGZhy{}keyboard\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n+nx}{standalone}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{true}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n+nx}{imports}\PYG{o}{:}\PYG{+w}{ }\PYG{p}{[],}
+\PYG{+w}{  }\PYG{n+nx}{templateUrl}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}./keyboard.component.html\PYGZsq{}}\PYG{p}{,}
+\PYG{p}{\PYGZcb{})}
+\PYG{k}{export}\PYG{+w}{ }\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nx}{KeyboardComponent}\PYG{+w}{ }\PYG{k}{implements}\PYG{+w}{ }\PYG{n+nx}{OnInit}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k+kd}{@Input}\PYG{p}{()}\PYG{+w}{ }\PYG{n+nx}{wordPrimary}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kd}{@Input}\PYG{p}{()}\PYG{+w}{ }\PYG{n+nx}{MAX\PYGZus{}TRIES}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{6}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kd}{@Input}\PYG{p}{()}\PYG{+w}{ }\PYG{n+nx}{tries\PYGZus{}number}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{0}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k+kd}{@Output}\PYG{p}{()}\PYG{+w}{ }\PYG{n+nx}{addTries}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{EventEmitter}\PYG{o}{\PYGZlt{}}\PYG{o+ow}{void}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+
+\PYG{+w}{  }\PYG{n+nx}{word}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{string}\PYG{p}{[]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[];}
+\PYG{+w}{  }\PYG{n+nx}{userWord}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{string}\PYG{p}{[]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[];}
+
+\PYG{+w}{  }\PYG{n+nx}{userLetter}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{string}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n+nx}{tries}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{string}\PYG{p}{[]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[];}
+
+\PYG{+w}{  }\PYG{n+nx}{ngOnInit}\PYG{p}{()}\PYG{o}{:}\PYG{+w}{ }\PYG{o+ow}{void}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{word}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{wordPrimary}\PYG{p}{.}\PYG{n+nx}{toUpperCase}\PYG{p}{().}\PYG{n+nx}{split}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{userWord}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{word}\PYG{p}{.}\PYG{n+nx}{map}\PYG{p}{(()}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{} \PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{k+kr}{constructor}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{userLetter}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{n+nx}{changeLetter}\PYG{p}{(}\PYG{n+nx}{event}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{Event}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{userLetter}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nx}{event}\PYG{p}{.}\PYG{n+nx}{target}\PYG{+w}{ }\PYG{k+kr}{as}\PYG{+w}{ }\PYG{n+nx}{HTMLInputElement}\PYG{p}{).}\PYG{n+nx}{value}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{n+nx}{userTry}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{letter}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{userLetter}\PYG{p}{.}\PYG{n+nx}{toUpperCase}\PYG{p}{();}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{tries}\PYG{p}{.}\PYG{n+nx}{includes}\PYG{p}{(}\PYG{n+nx}{letter}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k}{return}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{tries}\PYG{p}{.}\PYG{n+nx}{push}\PYG{p}{(}\PYG{n+nx}{letter}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{word}\PYG{p}{.}\PYG{n+nx}{includes}\PYG{p}{(}\PYG{n+nx}{letter}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{addTries}\PYG{p}{.}\PYG{n+nx}{emit}\PYG{p}{();}
+
+\PYG{+w}{      }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{userLetter}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{return}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{word}\PYG{p}{.}\PYG{n+nx}{forEach}\PYG{p}{((}\PYG{n+nx}{l}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nx}{l}\PYG{+w}{ }\PYG{o}{===}\PYG{+w}{ }\PYG{n+nx}{letter}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{userWord}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{letter}\PYG{p}{;}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{});}
+
+\PYG{+w}{    }\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{userLetter}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

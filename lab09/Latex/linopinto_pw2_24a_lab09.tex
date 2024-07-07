@@ -69,10 +69,10 @@
 \newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
 \newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
 \newcommand{\itemAcademic}{2023 \- B}
-\newcommand{\itemInput}{Del 19 Junio 2024}
-\newcommand{\itemOutput}{Al 23 Junio 2024}
-\newcommand{\itemPracticeNumber}{08}
-\newcommand{\itemTheme}{Django: ORM, PDFs y correos electrónicos}
+\newcommand{\itemInput}{Del 3 Junio 2024}
+\newcommand{\itemOutput}{Al 6 Junio 2024}
+\newcommand{\itemPracticeNumber}{09}
+\newcommand{\itemTheme}{Angular}
 \renewcommand{\contentsname}{Laboratorio \itemPracticeNumber}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,7 +93,7 @@
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
 \fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/episunsa.png}}}
-\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool\\\textbf{\itemCourse}}
 \fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet.png}}}
 \fancyfoot[L]{\itemStudentShort}
 \fancyfoot[C]{\itemCourse}
@@ -161,13 +161,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tarea}
 \begin{itemize}
-	\item Deberán replicar la actividad de los videos donde se trabaja con Relacion de uno a muchos, de muchos a muchos, impresión de pdfs y envio de emails; y adecuarla a un proyecto en blanco Django.
-	\item Para ello crear una carpeta dentro del proyecto github colaborativo con el docente, e informar el link donde se encuentra.
-	\item Eres libre de agregar CSS para decorar tu trabajo.
+	\item \textbf{Ejercicio 1:}
+	      \begin{itemize}
+		      \item Se desea crear un proyecto con Angular que implemente el juego del ahorcado.  Se tendrá un arreglo con posibles palabras a adivinar por parte del usuario.  La interfaz la dejamos a gusto de ustedes los programadores.
+	      \end{itemize}
 	\item \textbf{Observaciones:}
 	      \begin{itemize}
-		      \item Ya sabes que el trabajo con Git es obligatorio. Revisa los videos entregados.
-		      \item Cada commit debe ser realizado con un mensaje descriptivo que estuvo siguiendo. Si los mensajes no son claros respecto al código “commiteado” tendrá menos calificación.
+		      \item Forme grupos de 2 a 4 personas
+		      \item Reportar al profesor que logró culminar la tarea. La tarea debe ser compartida con el profesor en github (CarloCorrales010) y entregada usando el mismo url que se usó para clonar el repositorio. Además cada integrante del grupo deberá crear un video de 5 minutos en flipgrid explicando la aplicación.
 	      \end{itemize}
 \end{itemize}
 \pagebreak
@@ -187,10 +188,82 @@
 	\item Visual Studio Code
 	\item Git
 	\item Windows PowerShell
-	\item Python
+	\item Angular
 	\item Navegador Mozilla Firefox
 	      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{itemize}
+\pagebreak
+
+\section{Ejercicio Propuestos: Juego del ahorcado}
+Para el siguiente projecto se ha creado un proyecto con Angular que implementa el juego del ahorcado. Y se hace uso de Canvas a traves de la api rough.js. Para el diseño de implemento taiwlind css. Se genero los siguientes componentes:
+\begin{itemize}
+	\item \textbf{app.component:} Componente principal que contiene la lógica del juego.
+	\item \textbf{canvas.component:} Componente que contiene el canvas para dibujar el ahorcado.
+	\item \textbf{keyboard.component:} Componente que contiene el teclado para seleccionar las letras.el juego.
+\end{itemize}
+
+\subsection{Componente app}
+Este componente contiene la lógica del juego. Se encarga de seleccionar una palabra aleatoria del arreglo de palabras y de verificar si la letra seleccionada por el usuario se encuentra en la palabra. Además, se encarga de verificar si el usuario ha ganado o perdido el juego.
+\begin{block}
+\caption{app.component.ts}
+\inputminted{TypeScript}{../hangMan/src/app/app.component.ts}
+\begin{itemize}
+	\item Componente principal que contiene la lógica del juego.
+\end{itemize}
+
+\caption{app.component.html}
+\inputminted{HTML}{../hangMan/src/app/app.component.html}
+\begin{itemize}
+	\item Plantilla del componente \textbf{app}.
+	\item
+\end{itemize}
+
+\caption{app.component.css}
+\inputminted{CSS}{../hangMan/src/app/app.component.css}
+\begin{itemize}
+	\item Hoja de estilos para el componente \textbf{app}.
+\end{itemize}
+\end{block}
+\pagebreak
+
+\subsection{Componente canvas}
+Este componente contiene el canvas para dibujar el ahorcado. Se hace uso de la api rough.js para dibujar las figuras geométricas, esto en función de la varibles step pasada como propiedad de entrada @input. A medida que step incrementa, el dibulo del ahorcado se va completando, esto a traves de la función drawHangman.
+
+
+\begin{block}
+	\caption{canvas.component.ts}
+	\inputminted{TypeScript}{../hangMan/src/app/canvas/canvas.component.ts}
+	\begin{itemize}
+		\item Componente para el canvas.
+	\end{itemize}
+
+	\caption{canvas.component.html}
+	\inputminted{HTML}{../hangMan/src/app/canvas/canvas.component.html}
+	\begin{itemize}
+		\item Plantilla del componente \textbf{canvas}.
+		\item La hoja de estilo esta aqui mismo por taiwlind.
+	\end{itemize}
+\end{block}
+\pagebreak
+
+\subsection{Componente keyboard}
+Este componente contiene el teclado para seleccionar las letras. Se hace uso de la función selectLetter para seleccionar la letra y verificar si esta se encuentra en la palabra. Además, se verifica si el usuario ha ganado o perdido el juego.
+\begin{block}
+	\caption{keyboard.component.ts}
+	\inputminted{TypeScript}{../hangMan/src/app/keyboard/keyboard.component.ts}
+	\begin{itemize}
+		\item Componente para el teclado.
+	\end{itemize}
+
+	\caption{keyboard.component.html}
+	\inputminted{HTML}{../hangMan/src/app/keyboard/keyboard.component.html}
+	\begin{itemize}
+		\item Plantilla del componente \textbf{keyboard}.
+	\end{itemize}
+
+	\caption{keyboard.component.css}
+	\inputminted{CSS}{../hangMan/src/app/keyboard/keyboard.component.css}
+\end{block}
 \pagebreak
 
 \section{URL del repositorio en GitHub}
@@ -203,62 +276,28 @@
 	\item El contenido que se entrega en este laboratorio es el siguiente:
 \end{itemize}
 \begin{lstlisting}{language=bash}
-lab08/
-	|--Course_Management_System/
-		|--systemM/
-			|--migrations/
-			|--templates/
-				|--css/
-					|--form-page.css
-					|--lists.css
-					|--nav.css
-				|--pdf/
-					|--certified.html
-					|--generate_certified.html
-					|--index.html
-					|--invoice.html
-					|--list_courses.html
-					|--list_students.html
-					|--nav.html
-					|--register_course.html
-					|--register_student.html
-					|--send_message.html
-			|--__init__.py
-			|--admin.py
-			|--apps.py
-			|--forms.py
-			|--models.py
-			|--renderers.py
-			|--tests.py
-			|--urls.py
-			|--views.py
-		|--system/
-	|--relations_examples/
-	|--email_example/
-	|--print_pdfs/
-|--Latex/
-		|--linopinto_pw2_24a_lab08.tex
-		|--linopinto_pw2_24a_lab08.pdf
+lab09/
+	|--Angular/
+		|--hangMan/
+			|--src/
+				|--app/
+					|--app.component.ts
+					|--app.component.html
+					|--app.component.css
+					|--canvas/
+						|--canvas.component.ts
+						|--canvas.component.html
+					|--keyboard/
+						|--keyboard.component.ts
+						|--keyboard.component.html
+						|--keyboard.component.css
+	|--Latex/
+		|--linopinto_pw2_24a_lab09.tex
+		|--linopinto_pw2_24a_lab09.pdf
 		|--img/
 			 |--commits.png
-			 |--r1operaciones.png
-			 |--r2operations.png
-			 |--r1tabla1.png
-			 |--r1tabla2.png
-			 |--r2tabla1.png
-			 |--r2tabla2.png
-			 |--r2tabla3.png
-			 |--send_email.png
-			 |--print_pdf.png
-			 |--registerStudent.png
-			 |--registerSBD.png
-			 |--registerCourse.png
-			 |--registerCBD.png
-			 |--relation.png
-			 |--listStudents.png
-			 |--listCourses.png
-			 |--sendMessage.png
-			 |--certificado.png
+			 |--prueba.png
+	|--sciense-quiz/
 |--.gitignore
 \end{lstlisting}
 \section{Rúbrica}
@@ -271,8 +310,4 @@ lab08/
 \end{itemize}
 
 \pagebreak
-\bibliographystyle{apalike}
-\bibliographystyle{IEEEtranN}
-\bibliography{bibliography}
-
 \end{document}
